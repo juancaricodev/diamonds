@@ -1,0 +1,19 @@
+{
+  "name": "diamonds",
+  "version": "1.0.0",
+  "description": "Landing page developed initially as a simple HTML template. Will grow into a Vue.js app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juancaricodev/diamonds.git"
+  },
+  "author": " <juancaricodev@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juancaricodev/diamonds/issues"
+  },
+  "homepage": "https://github.com/juancaricodev/diamonds#readme"
+}
