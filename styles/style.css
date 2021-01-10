@@ -1,0 +1,74 @@
+/* Imports */
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/poppins/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/poppins/Poppins-Black.ttf') format('truetype');
+  font-weight: 900;
+}
+@font-face {
+  font-family: 'Didot';
+  src: url('../assets/fonts/didot/Didot.ttc') format('truetype');
+}
+@font-face {
+  font-family: 'Blesing';
+  src: url('../assets/fonts/Blesing.otf') format('opentype');
+}
+
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol,
+li {
+  list-style-type: none;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  font-family: 'Poppins';
+  font-weight: 400;
+}
+.header__login {
+  display: flex;
+  gap: 10px;
+}
+.header__navbar ul {
+  display: flex;
+  gap: 40px;
+}
+.header__navbar ul li {
+  display: inherit;
+  flex-direction: column;
+  gap: 10px;
+}
+.header__navbar-opt {
+  padding-top: 10px;
+}
+/* .header__navbar ul li img {
+  fill: #bc9143;
+  stroke: #bc9143;
+  filter: invert(56%) sepia(49%) saturate(488%) hue-rotate(0deg) brightness(96%) contrast(90%);
+} */
+
+.header__search {
+  display: flex;
+  gap: 10px;
+}
