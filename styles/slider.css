@@ -14,7 +14,6 @@
 
 
 .slider-position {
-  /* position: absolute; */
   grid-column: 2;
   grid-row: 1;
   display: flex;
@@ -81,29 +80,12 @@
   transform: scaleX(-1);
 }
 
-
-
-
-/* .slider__btn {
-  position: absolute;
-  top: 50%;
-  transform: translate(0%, -50%);
-  -ms-transform: translate(-0%, -50%);
-  background: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
+/* Desktop */
+@media only screen and (max-width: 1024px) {
+  .slider__text {
+    top: 25%;
+  }
+  .slider__btn {
+    top: 35%
+  }
 }
-
-.slider__btn img {
-  width: 27px;
-}
-
-.slider__btn--right {
-  right: 10%;
-}
-
-.slider__btn--left {
-  left: 10%;
-  transform: scaleX(-1);
-} */
