@@ -17,8 +17,8 @@
   grid-column: 2;
   grid-row: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 /* Text */
@@ -33,13 +33,14 @@
   width: 360px;
   gap: 30px;
   color: white;
+  opacity: 0.9;
 }
 .slider__text-title {
   font-family: 'Didot', serif;
   text-transform: uppercase;
   font-size: var(--slider-title);
-  letter-spacing: 2px;
   font-weight: 500;
+  letter-spacing: 2px;
 }
 .slider__text-hl {
   width: 250px;
