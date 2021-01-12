@@ -50,8 +50,7 @@
   src: url('../assets/fonts/Blesing.otf') format('opentype');
 }
 
-
-/* Global Styles */
+/* Vatiables */
 :root {
   /* Screen Breakpoints */
   --desktop-big: 1920px;
@@ -61,10 +60,11 @@
 
   /* Sizes */
   --text-menu: 17px;
-  --slider-title: 33px;
-  --slider-content: 12px;
+  --section-title: 33px;
+  --section-content: 12px;
 }
 
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
