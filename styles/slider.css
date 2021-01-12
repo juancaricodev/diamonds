@@ -38,7 +38,7 @@
 .slider__text-title {
   font-family: 'Didot', serif;
   text-transform: uppercase;
-  font-size: var(--slider-title);
+  font-size: var(--section-title);
   font-weight: 500;
   letter-spacing: 2px;
 }
@@ -48,7 +48,7 @@
 }
 .slider__text-content {
   font-family: 'Poppins', sans-serif;
-  font-size: var(--slider-content);
+  font-size: var(--section-content);
   font-weight: 300;
   letter-spacing: 2px;
   text-align: center;
