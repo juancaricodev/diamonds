@@ -3,6 +3,7 @@
 /* Components */
 @import './header.css';
 @import './slider.css';
+@import './collection.css';
 
 /* Fonts */
 @font-face {
