@@ -6,6 +6,7 @@
   margin: 70px 10%;
 }
 
+/* Header */
 .collection__header {
   width: 100%;
   display: flex;
@@ -50,4 +51,19 @@
   font-weight: 400;
   letter-spacing: 2px;
   text-align: center;
+}
+
+/* Card Container */
+.collection__cards {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+}
+.collection__cards-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
 }
