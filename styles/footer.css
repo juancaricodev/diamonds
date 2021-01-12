@@ -1,0 +1,34 @@
+.footer {
+}
+
+.footer__navbar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+  grid-column: 1;
+  width: 100%;
+  height: 140px;
+  color: #fff;
+  background-color: #000;
+}
+
+.footer__navbar-options {
+  grid-column: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__navbar-logo {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__navbar-social {
+  grid-column: 3;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__copy {}
