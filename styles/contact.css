@@ -56,6 +56,14 @@
   cursor: pointer;
 }
 
+/* Scroll-up Button */
+.scrollup {
+  position: absolute;
+  right: 3.5%;
+  display: flex;
+  height: inherit;
+}
+
 /* Desktop */
 @media only screen and (max-width: 1600px) {
   .contact__title {
