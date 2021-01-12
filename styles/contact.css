@@ -1,17 +1,17 @@
 .contact {
-  margin-top: 80px;
   padding: 0 50px;
+  margin: 100px 10%;
   height: 140px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
   align-items: center;
-  margin: 70px 10%;
+  grid-template-columns: 400px auto 200px;
   box-shadow: 3px 1px 50px -25px rgba(0,0,0,0.15);
   -webkit-box-shadow: 3px 1px 50px -25px rgba(0,0,0,0.15);
   -moz-box-shadow: 3px 1px 50px -25px rgba(0,0,0,0.15);
 }
 
 .contact__title {
+  grid-column: 1;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -33,7 +33,8 @@
 }
 
 .contact__description {
-  width: 50%;
+  grid-column: 2;
+  padding: 0 5%;
   font-family: 'Poppins', sans-serif;
   font-size: var(--section-medium);
   font-weight: 300;
@@ -41,6 +42,7 @@
 }
 
 .contact__button {
+  grid-column: 3;
   width: 200px;
   height: 48px;
   font-family: 'Poppins', sans-serif;
@@ -52,4 +54,26 @@
   border: 2px solid #000;
   outline: none;
   cursor: pointer;
+}
+
+/* Desktop */
+@media only screen and (max-width: 1600px) {
+  .contact__title {
+    gap: 10px;
+  }
+  .contact__title h1 {
+    position: relative;
+    width: 200px;
+    font-size: 27px;
+  }
+  .contact__description {
+    font-size: var(--section-content);
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .contact {
+    padding: 0 20px;
+    grid-template-columns: 350px auto 200px;
+  }
 }
