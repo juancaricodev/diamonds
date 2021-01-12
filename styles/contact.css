@@ -1,0 +1,20 @@
+.contact {
+  margin-top: 80px;
+  padding: 0 50px;
+  height: 140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 70px 10%;
+  box-shadow: 3px 1px 50px -25px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 3px 1px 50px -25px rgba(0,0,0,0.15);
+  -moz-box-shadow: 3px 1px 50px -25px rgba(0,0,0,0.15);
+}
+
+.contact__title {
+  display: flex;
+}
+
+.contact__description {
+  width: 70%;
+}
