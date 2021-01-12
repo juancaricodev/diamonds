@@ -5,6 +5,7 @@ Landing page developed initially as a simple HTML template. Will grow into a Vue
 ## Technical Stack (Initially)
 * HTML5
 * CSS3
+* JS
 
 
 <!-- ## Demo
