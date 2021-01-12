@@ -62,9 +62,11 @@
     gap: 10px;
   }
   .contact__title h1 {
-    position: relative;
     width: 200px;
     font-size: 27px;
+  }
+  .contact__title h2 {
+    font-size: 19px;
   }
   .contact__description {
     font-size: var(--section-content);
