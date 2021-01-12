@@ -4,6 +4,7 @@
 @import './header.css';
 @import './slider.css';
 @import './collection.css';
+@import './contact.css';
 
 /* Fonts */
 @font-face {
@@ -63,6 +64,10 @@
   --section-title: 33px;
   --section-subtitle: 21px;
   --section-content: 12px;
+  --section-medium: 14px;
+
+  /* Colors */
+  --color-gold: #BC9143;
 }
 
 /* Global Styles */
