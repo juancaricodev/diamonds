@@ -54,6 +54,7 @@
 
   &__login {
     display: flex;
+    align-items: center;
     gap: 10px;
 
     img {
@@ -76,12 +77,16 @@
     }
 
     &-diamond {
-      display: none;
+      /* display: none; */
+      position: absolute;
+      top: 65px;
+      width: 10px;
     }
   }
 
   &__search {
     display: flex;
+    align-items: center;
     justify-content: flex-end;
 
     &-lang {
