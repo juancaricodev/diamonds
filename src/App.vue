@@ -45,10 +45,10 @@
   </header> -->
   <Header />
   <main>
-    <section class="slider">
+    <!-- <section class="slider">
       <img class="slider__img" src="./assets/img/jewelry-carousel.jpg" alt="slider image">
-      <!-- <img class="slider__img" src="./assets/img/jewelry-carousel2.png" alt="slider image">
-      <img class="slider__img" src="./assets/img/jewelry-carousel.jpg" alt="slider image"> -->
+      <img class="slider__img" src="./assets/img/jewelry-carousel2.png" alt="slider image">
+      <img class="slider__img" src="./assets/img/jewelry-carousel.jpg" alt="slider image">
 
       <div class="slider-position">
         <div class="slider__text">
@@ -64,7 +64,9 @@
 
       <button class="slider__btn slider__btn--right"><img src="./assets/svg/arrow.svg" alt="arrow right button"></button>
       <button class="slider__btn slider__btn--left"><img src="./assets/svg/arrow.svg" alt="arrow left button"></button>
-    </section>
+    </section> -->
+
+    <Slider />
 
     <section class="collection">
         <div class="collection__header">
@@ -163,11 +165,13 @@
 
 <script>
 import Header from './components/Header.vue'
+import Slider from './components/Slider.vue'
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Slider
   }
 }
 </script>
