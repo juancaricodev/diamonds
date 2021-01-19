@@ -6,11 +6,15 @@
     </div>
 
     <nav class="header__navbar">
-      <div>
-        <a @click="scrollUpBtn">
+      <div :class="{ active: homeActive === true }">
+        <a @click="scrollUpBtn" >
           <p>HOME</p>
         </a>
-        <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
+        <img
+          class="header__navbar-diamond"
+          src="../assets/svg/diamond.svg"
+          alt="diamond icon"
+        />
       </div>
 
       <div>
@@ -50,8 +54,16 @@
 </template>
 
 <script>
+import { reactive, toRefs } from 'vue'
 export default {
   setup () {
+    const navbarState = reactive({
+      homeActive: true,
+      aboutActive: false,
+      jewelsActive: false,
+      contactActive: false
+    })
+
     function scrollUpBtn () {
       const rootElement = document.documentElement
       rootElement.scrollTo({
@@ -66,6 +78,7 @@ export default {
     }
 
     return {
+      ...toRefs(navbarState),
       scrollOption,
       scrollUpBtn
     }
@@ -74,6 +87,16 @@ export default {
 </script>
 
 <style lang="scss">
+.active {
+  font-weight: 900;
+
+  .header__navbar-diamond {
+    visibility: visible;
+    position: absolute;
+    top: 65px;
+    width: 10px;
+  }
+}
 .header {
   display: grid;
   grid-template-columns: 20% auto 20%;
@@ -89,9 +112,7 @@ export default {
     align-items: center;
     gap: 10px;
 
-    img {
-      width: 18px;
-    }
+    img { width: 18px; }
   }
 
   &__navbar {
@@ -111,16 +132,9 @@ export default {
       }
     }
 
-    &-logo {
-      width: 80px;
-    }
+    &-logo { width: 80px; }
 
-    &-diamond {
-      /* display: none; */
-      position: absolute;
-      top: 65px;
-      width: 10px;
-    }
+    &-diamond { visibility: hidden; }
   }
 
   &__search {
@@ -132,9 +146,7 @@ export default {
       display: inherit;
       gap: 10px;
 
-      img {
-        width: 17px;
-      }
+      img { width: 17px; }
     }
 
     &-icon {
@@ -146,29 +158,17 @@ export default {
 
 /* Desktop */
 @media only screen and (max-width: 1366px) {
-  .header {
-    padding: 20px 5%;
-  }
+  .header { padding: 20px 5%; }
 }
 @media only screen and (max-width: 1280px) {
-  .header__navbar ul {
-    gap: 50px;
-  }
-  .header__navbar-logo {
-    margin: 0 20px;
-  }
+  .header__navbar ul { gap: 50px; }
+  .header__navbar-logo { margin: 0 20px; }
 }
 
 /* Tablet */
 @media only screen and (max-width: 768px) {
-  .header {
-    padding: 20px 10px;
-  }
-  .header__navbar ul {
-    gap: 30px;
-  }
-  .header__navbar-logo {
-    margin: 0 10px;
-  }
+  .header { padding: 20px 10px; }
+  .header__navbar ul { gap: 30px; }
+  .header__navbar-logo { margin: 0 10px; }
 }
 </style>
