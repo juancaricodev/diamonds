@@ -68,7 +68,7 @@
 
     <Slider />
 
-    <section class="collection">
+    <!-- <section class="collection">
         <div class="collection__header">
         <div class="collection__header-title">
           <span></span>
@@ -113,9 +113,11 @@
       </div>
 
       <button class="collection__button">View All</button>
-    </section>
+    </section> -->
 
-    <section class="contact">
+    <Collection />
+
+    <!-- <section class="contact">
       <div class="contact__title">
         <h1>Contact Us</h1>
         <h2>Diamonds</h2>
@@ -130,7 +132,10 @@
         <div class="scrollup" id="scrollUpBtn">
         <img src="./assets/svg/arrow-in-circle-point-to-up.svg" alt="go to top icon" class="scrollup__icon">
       </div>
-    </section>
+    </section> -->
+
+    <Contact />
+
   </main>
 
   <footer class="footer">
@@ -166,12 +171,16 @@
 <script>
 import Header from './components/Header.vue'
 import Slider from './components/Slider.vue'
+import Collection from './components/Collection.vue'
+import Contact from './components/Contact.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Slider
+    Slider,
+    Collection,
+    Contact
   }
 }
 </script>
