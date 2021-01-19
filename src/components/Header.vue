@@ -50,9 +50,9 @@
   grid-template-rows: repeat(2, auto);
   align-items: center;
   padding: 20px 10%;
-  font-family: 'Poppins';
+  font-family: $poppins;
   font-weight: 500;
-  font-size: var(--text-menu);
+  font-size: $text-menu;
   letter-spacing: 2px;
 
   &__login {
