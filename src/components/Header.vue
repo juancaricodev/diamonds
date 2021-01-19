@@ -7,7 +7,7 @@
 
     <nav class="header__navbar">
       <div :class="{ active: homeActive === true }">
-        <a @click="scrollUpBtn" >
+        <a @click="scrollUpBtn, setActive('homeActive')" >
           <p>HOME</p>
         </a>
         <img
@@ -17,8 +17,8 @@
         />
       </div>
 
-      <div>
-        <a @click="scrollOption('.slider')">
+      <div :class="{ active: aboutActive === true }">
+        <a @click="scrollOption('.slider'), setActive('aboutActive')">
           <p>ABOUT</p>
         </a>
         <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
@@ -28,15 +28,15 @@
         <img class="header__navbar-logo" src="../assets/svg/logo.svg" alt="diamond logo">
       </div>
 
-      <div>
-        <a @click="scrollOption('.collection')">
+      <div :class="{ active: jewelsActive === true }">
+        <a @click="scrollOption('.collection'), setActive('jewelsActive')">
           <p>JEWELS</p>
         </a>
         <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
       </div>
 
-      <div>
-        <a @click="scrollOption('.contact')">
+      <div :class="{ active: contactActive === true }">
+        <a @click="scrollOption('.contact'), setActive('contactActive')">
           <p>CONTACT</p>
         </a>
         <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
@@ -64,6 +64,22 @@ export default {
       contactActive: false
     })
 
+    function setActive (option) {
+      Object.keys(navbarState).map((key, index) => {
+        navbarState[key] = false
+      })
+
+      if (option === 'homeActive') {
+        navbarState.homeActive = true
+      } else if (option === 'aboutActive') {
+        navbarState.aboutActive = true
+      } else if (option === 'jewelsActive') {
+        navbarState.jewelsActive = true
+      } else if (option === 'contactActive') {
+        navbarState.contactActive = true
+      }
+    }
+
     function scrollUpBtn () {
       const rootElement = document.documentElement
       rootElement.scrollTo({
@@ -80,23 +96,14 @@ export default {
     return {
       ...toRefs(navbarState),
       scrollOption,
-      scrollUpBtn
+      scrollUpBtn,
+      setActive
     }
   }
 }
 </script>
 
 <style lang="scss">
-.active {
-  font-weight: 900;
-
-  .header__navbar-diamond {
-    visibility: visible;
-    position: absolute;
-    top: 65px;
-    width: 10px;
-  }
-}
 .header {
   display: grid;
   grid-template-columns: 20% auto 20%;
@@ -152,6 +159,17 @@ export default {
     &-icon {
       margin-left: 20px;
       width: 25px;
+    }
+  }
+
+  .active {
+    font-weight: 700;
+
+    .header__navbar-diamond {
+      visibility: visible;
+      position: absolute;
+      top: 65px;
+      width: 10px;
     }
   }
 }
