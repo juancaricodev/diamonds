@@ -58,7 +58,7 @@
     opacity: 0.9;
 
     &-title {
-      font-family: 'Didot', serif;
+      font-family: $didot;
       text-transform: uppercase;
       font-size: $section-title;
       font-weight: 500;
@@ -71,7 +71,7 @@
     }
 
     &-content {
-      font-family: 'Poppins', sans-serif;
+      font-family: $poppins;
       font-size: $section-content;
       font-weight: 300;
       letter-spacing: 2px;

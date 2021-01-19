@@ -79,7 +79,7 @@
       h2 {
         position: absolute;
         padding:0 30px;
-        font-family: 'Didot', serif;
+        font-family: $didot;
         text-transform: uppercase;
         font-size: $section-title;
         letter-spacing: 2px;
@@ -93,7 +93,7 @@
       display: flex;
       justify-content: center;
       width: 620px;
-      font-family: 'Poppins', sans-serif;
+      font-family: $poppins;
       font-size: $section-content;
       font-weight: 400;
       letter-spacing: 2px;
@@ -136,7 +136,7 @@
         height: 100%;
 
         h3 {
-          font-family: 'Didot', serif;
+          font-family: $didot;
           text-transform: uppercase;
           font-size: $section-subtitle;
           letter-spacing: 2px;
@@ -150,7 +150,7 @@
         }
 
         p {
-          font-family: 'Poppins', sans-serif;
+          font-family: $poppins;
           font-size: $section-content;
           font-weight: 300;
           letter-spacing: 1.5px;
@@ -163,7 +163,7 @@
   &__button {
     width: 200px;
     height: 48px;
-    font-family: 'Poppins', sans-serif;
+    font-family: $poppins;
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 2px;

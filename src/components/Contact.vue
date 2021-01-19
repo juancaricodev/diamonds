@@ -54,7 +54,7 @@ export default {
     gap: 20px;
 
     h1 {
-      font-family: 'Poppins', sans-serif;
+      font-family: $poppins;
       font-size: $section-title;
       font-weight: 700;
       letter-spacing: 2px;
@@ -74,7 +74,7 @@ export default {
   &__description {
     grid-column: 2;
     padding: 0 5%;
-    font-family: 'Poppins', sans-serif;
+    font-family: $poppins;
     font-size: $section-medium;
     font-weight: 300;
     letter-spacing: 1.5px;
@@ -84,7 +84,7 @@ export default {
     grid-column: 3;
     width: 200px;
     height: 48px;
-    font-family: 'Poppins', sans-serif;
+    font-family: $poppins;
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 2px;

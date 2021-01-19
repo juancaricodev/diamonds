@@ -138,7 +138,7 @@
 
   </main>
 
-  <footer class="footer">
+  <!-- <footer class="footer">
     <section class="footer__navbar">
       <div class="footer__navbar-options">
         <a href="#">
@@ -165,7 +165,10 @@
         Copyright &copy; 2021 DIAMONDS. All rights reserved.
       </p>
     </section>
-  </footer>
+  </footer> -->
+
+  <Footer />
+
 </template>
 
 <script>
@@ -173,6 +176,7 @@ import Header from './components/Header.vue'
 import Slider from './components/Slider.vue'
 import Collection from './components/Collection.vue'
 import Contact from './components/Contact.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
@@ -180,7 +184,8 @@ export default {
     Header,
     Slider,
     Collection,
-    Contact
+    Contact,
+    Footer
   }
 }
 </script>
