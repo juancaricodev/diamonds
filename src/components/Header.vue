@@ -62,7 +62,6 @@ export default {
 
     function scrollOption (selector) {
       const element = document.querySelector(selector)
-
       element.scrollIntoView({ behavior: 'smooth' })
     }
 
@@ -103,6 +102,13 @@ export default {
     div {
       display: flex;
       justify-content: center;
+
+      a {
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover { text-shadow: $text-shadow; }
+      }
     }
 
     &-logo {
