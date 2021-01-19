@@ -1,18 +1,31 @@
 # Diamonds
+Website Diamonds developed with Vue.js among other technologies.
 
-Landing page developed initially as a simple HTML template. Will grow into a Vue.js app.
-
-## Technical Stack (Initially)
+## Stack
+* Vue.js
 * HTML5
-* CSS3
+* SCSS (SASS)
 * JS
 
+## Project setup
+```
+yarn install
+```
 
-<!-- ## Demo
-Watch the demo [here]()!
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
 
-## Preview
-![]() -->
+### Compiles and minifies for production
+```
+yarn build
+```
 
-## Desired Result
-![result preview](./assets/img/home.jpg)
+### Lints and fixes files
+```
+yarn lint
+```
+
+<!-- ### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/). -->

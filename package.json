@@ -1,19 +1,47 @@
 {
   "name": "diamonds",
   "version": "1.0.0",
+  "private": true,
   "description": "Landing page developed initially as a simple HTML template. Will grow into a Vue.js app.",
-  "main": "index.js",
+  "author": {
+    "email": "juancaricodev@gmail.com"
+  },
   "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/juancaricodev/diamonds.git"
+  "main": "index.js",
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "vue": "^3.0.0"
   },
-  "author": " <juancaricodev@gmail.com>",
-  "license": "ISC",
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2"
+  },
+  "_id": "diamonds@1.0.0",
   "bugs": {
     "url": "https://github.com/juancaricodev/diamonds/issues"
   },
-  "homepage": "https://github.com/juancaricodev/diamonds#readme"
+  "homepage": "https://github.com/juancaricodev/diamonds#readme",
+  "license": "ISC",
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juancaricodev/diamonds.git"
+  }
 }
