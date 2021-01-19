@@ -1,18 +1,24 @@
-# Diamonds
+# diamonds
 
-Landing page developed initially as a simple HTML template. Will grow into a Vue.js app.
+## Project setup
+```
+yarn install
+```
 
-## Technical Stack (Initially)
-* HTML5
-* CSS3
-* JS
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
 
+### Compiles and minifies for production
+```
+yarn build
+```
 
-<!-- ## Demo
-Watch the demo [here]()!
+### Lints and fixes files
+```
+yarn lint
+```
 
-## Preview
-![]() -->
-
-## Desired Result
-![result preview](./assets/img/home.jpg)
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
