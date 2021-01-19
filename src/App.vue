@@ -1,7 +1,7 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <header class="header">
+  <!-- <header class="header">
     <div class="header__login">
       <img src="./assets/svg/lock.svg" alt="login logo" />
       <p>Login</p>
@@ -42,8 +42,8 @@
       </div>
       <img class="header__search-icon" src="./assets/svg/magnifying-glass.svg" alt="search icon">
     </div>
-  </header>
-
+  </header> -->
+  <Header />
   <main>
     <section class="slider">
       <img class="slider__img" src="./assets/img/jewelry-carousel.jpg" alt="slider image">
@@ -162,23 +162,12 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld
+    Header
   }
 }
 </script>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
