@@ -72,7 +72,7 @@
       span {
         width: 100%;
         margin: 20px 0 10px;
-        border-bottom: 2px solid #000;
+        border-bottom: 2px solid $color-black;
         opacity: 0.1;
       }
 
@@ -84,7 +84,7 @@
         font-size: $section-title;
         letter-spacing: 2px;
         text-align: center;
-        background:#fff;
+        background: $color-white;
       }
     }
 
@@ -145,7 +145,7 @@
         span {
           width: 65%;
           margin: 30px 0 35px;
-          border-bottom: 1px solid #000;
+          border-bottom: 1px solid $color-black;
           opacity: 0.1;
         }
 
@@ -168,8 +168,8 @@
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    background-color: #fff;
-    border: 2px solid #000;
+    background-color: $color-white;
+    border: 2px solid $color-black;
     outline: none;
     cursor: pointer;
   }

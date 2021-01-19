@@ -54,7 +54,7 @@
     align-items: center;
     width: 360px;
     gap: 30px;
-    color: white;
+    color: $color-white;
     opacity: 0.9;
 
     &-title {
@@ -67,7 +67,7 @@
 
     &-hl {
       width: 250px;
-      border-bottom: solid white 1px;
+      border-bottom: solid $color-white 1px;
     }
 
     &-content {

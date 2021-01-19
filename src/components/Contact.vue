@@ -11,12 +11,29 @@
 
     <button class="contact__button">Contact</button>
 
-      <div class="scrollup" id="scrollUpBtn">
+      <div class="scrollup" @click="scrollUpBtn">
       <img src="../assets/svg/arrow-in-circle-point-to-up.svg" alt="go to top icon" class="scrollup__icon">
     </div>
   </section>
-
 </template>
+
+<script>
+export default {
+  setup () {
+    function scrollUpBtn () {
+      const rootElement = document.documentElement
+      rootElement.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    }
+
+    return {
+      scrollUpBtn
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 .contact {
@@ -118,5 +135,4 @@
     grid-template-columns: 350px auto 200px;
   }
 }
-
 </style>
