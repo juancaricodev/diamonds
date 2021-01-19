@@ -1,4 +1,11 @@
-# diamonds
+# Diamonds
+Website Diamonds developed with Vue.js among other technologies.
+
+## Stack
+* Vue.js
+* HTML5
+* SCSS (SASS)
+* JS
 
 ## Project setup
 ```
@@ -20,5 +27,5 @@ yarn build
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+<!-- ### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/). -->
