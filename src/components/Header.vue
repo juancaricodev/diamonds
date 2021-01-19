@@ -7,12 +7,16 @@
 
     <nav class="header__navbar">
       <div>
-        <p>HOME</p>
+        <a @click="scrollUpBtn">
+          <p>HOME</p>
+        </a>
         <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
       </div>
 
       <div>
-        <p>ABOUT</p>
+        <a @click="scrollOption('.slider')">
+          <p>ABOUT</p>
+        </a>
         <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
       </div>
 
@@ -21,12 +25,16 @@
       </div>
 
       <div>
-        <p>JEWELS</p>
+        <a @click="scrollOption('.collection')">
+          <p>JEWELS</p>
+        </a>
         <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
       </div>
 
       <div>
-        <p>CONTACT</p>
+        <a @click="scrollOption('.contact')">
+          <p>CONTACT</p>
+        </a>
         <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
       </div>
     </nav>
@@ -40,6 +48,31 @@
     </div>
   </header>
 </template>
+
+<script>
+export default {
+  setup () {
+    function scrollUpBtn () {
+      const rootElement = document.documentElement
+      rootElement.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    }
+
+    function scrollOption (selector) {
+      const element = document.querySelector(selector)
+
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+
+    return {
+      scrollOption,
+      scrollUpBtn
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 .header {
