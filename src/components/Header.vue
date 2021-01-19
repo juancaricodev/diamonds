@@ -6,31 +6,29 @@
     </div>
 
     <nav class="header__navbar">
-      <ul>
-        <li>
-          <p>HOME</p>
-          <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
-        </li>
+      <div>
+        <p>HOME</p>
+        <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
+      </div>
 
-        <li>
-          <p>ABOUT</p>
-          <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
-        </li>
+      <div>
+        <p>ABOUT</p>
+        <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
+      </div>
 
-        <li>
-          <img class="header__navbar-logo" src="../assets/svg/logo.svg" alt="diamond logo">
-        </li>
+      <div>
+        <img class="header__navbar-logo" src="../assets/svg/logo.svg" alt="diamond logo">
+      </div>
 
-        <li>
-          <p>JEWELS</p>
-          <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
-        </li>
+      <div>
+        <p>JEWELS</p>
+        <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
+      </div>
 
-        <li>
-          <p>CONTACT</p>
-          <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
-        </li>
-      </ul>
+      <div>
+        <p>CONTACT</p>
+        <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
+      </div>
     </nav>
 
     <div class="header__search">
@@ -46,8 +44,7 @@
 <style lang="scss">
 .header {
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(2, auto);
+  grid-template-columns: 20% auto 20%;
   align-items: center;
   padding: 20px 10%;
   font-family: $poppins;
@@ -65,22 +62,17 @@
   }
 
   &__navbar {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 30% 1fr 1fr ;
 
-    ul {
+    div {
       display: flex;
       justify-content: center;
-      gap: 70px;
-
-      li {
-        display: inherit;
-        align-items: center;
-        gap: 10px;
-      }
     }
 
     &-logo {
       width: 80px;
-      margin: 0 40px;
     }
 
     &-diamond {
