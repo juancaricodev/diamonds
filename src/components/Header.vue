@@ -1,5 +1,5 @@
 <template>
-   <header class="header">
+   <header class="header" @scroll="scrollHeader">
     <div class="header__login">
       <img src="../assets/svg/lock.svg" alt="login logo" />
       <p>Login</p>
@@ -7,7 +7,7 @@
 
     <nav class="header__navbar">
       <div :class="{ active: homeActive === true }">
-        <a @click="scrollUpBtn, setActive('homeActive')" >
+        <a @click="scrollUpBtn, setActive('homeActive')">
           <p>HOME</p>
         </a>
         <img
@@ -64,6 +64,12 @@ export default {
       contactActive: false
     })
 
+    function scrollHeader () {
+      // const element = document.querySelector('.header')
+      // element.classList.add('header--scroll')
+      console.log('scroll working')
+    }
+
     function setActive (option) {
       Object.keys(navbarState).map((key, index) => {
         navbarState[key] = false
@@ -97,13 +103,25 @@ export default {
       ...toRefs(navbarState),
       scrollOption,
       scrollUpBtn,
-      setActive
+      setActive,
+      scrollHeader
     }
   }
 }
 </script>
 
 <style lang="scss">
+.header--scroll {
+  width: 80%;
+  background-color: white;
+  z-index: 1;
+  opacity: 0.9;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
 .header {
   display: grid;
   grid-template-columns: 20% auto 20%;
@@ -125,7 +143,7 @@ export default {
   &__navbar {
     display: grid;
     align-items: center;
-    grid-template-columns: 1fr 1fr 30% 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 30% 1fr 1fr;
 
     div {
       display: flex;
@@ -164,6 +182,7 @@ export default {
 
   .active {
     font-weight: 700;
+    transition: 0.3s;
 
     .header__navbar-diamond {
       visibility: visible;

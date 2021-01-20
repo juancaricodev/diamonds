@@ -1,50 +1,50 @@
 <template>
-      <section class="collection">
-        <div class="collection__header">
-        <div class="collection__header-title">
+  <section class="collection">
+    <div class="collection__header">
+      <div class="collection__header-title">
+        <span></span>
+        <h2>Our Collection</h2>
+      </div>
+
+      <p class="collection__header-description">
+        Specially crafted with the utmost of precision and care, our dreamy jewels are meant to make your wishes come true.
+      </p>
+    </div>
+
+      <div class="collection__cards">
+      <div class="collection__cards-item">
+        <img src="../assets/img/shutterstock_1530727334.jpg" alt="product image" class="collection__cards-item-img">
+        <div class="collection__cards-item-content">
+          <h3>Diamond <sub>I</sub></h3>
           <span></span>
-          <h2>Our Collection</h2>
+          <p>The shining diamonds of the bracelet sprinkle the space.</p>
         </div>
-
-        <p class="collection__header-description">
-          Specially crafted with the utmost of precision and care, our dreamy jewels are meant to make your wishes come true.
-        </p>
+        <img src="../assets/svg/diamond.svg" alt="diamond icon" class="collection__cards-item-diamond">
       </div>
 
-        <div class="collection__cards">
-        <div class="collection__cards-item">
-          <img src="../assets/img/shutterstock_1530727334.jpg" alt="product image" class="collection__cards-item-img">
-          <div class="collection__cards-item-content">
-            <h3>Diamond <sub>I</sub></h3>
-            <span></span>
-            <p>The shining diamonds of the bracelet sprinkle the space.</p>
-          </div>
-          <img src="../assets/svg/diamond.svg" alt="diamond icon" class="collection__cards-item-diamond">
+      <div class="collection__cards-item">
+        <img src="../assets/img/shutterstock_1530727334.jpg" alt="product image" class="collection__cards-item-img">
+        <div class="collection__cards-item-content">
+          <h3>Diamond <sub>2</sub></h3>
+          <span></span>
+          <p>The intrinsic beauty lies in these sleek and clean earings where polished diamonds embrace the wearer and mark the shape of the face.</p>
         </div>
-
-        <div class="collection__cards-item">
-          <img src="../assets/img/shutterstock_1530727334.jpg" alt="product image" class="collection__cards-item-img">
-          <div class="collection__cards-item-content">
-            <h3>Diamond <sub>2</sub></h3>
-            <span></span>
-            <p>The intrinsic beauty lies in these sleek and clean earings where polished diamonds embrace the wearer and mark the shape of the face.</p>
-          </div>
-          <img src="../assets/svg/diamond.svg" alt="diamond icon" class="collection__cards-item-diamond">
-        </div>
-
-        <div class="collection__cards-item">
-          <img src="../assets/img/shutterstock_1530727334.jpg" alt="product image" class="collection__cards-item-img">
-          <div class="collection__cards-item-content">
-            <h3>Diamond <sub>3</sub></h3>
-            <span></span>
-            <p>The sparkles of the diamonds on this powerful ring symbolize the strength of beauty.</p>
-          </div>
-          <img src="../assets/svg/diamond.svg" alt="diamond icon" class="collection__cards-item-diamond">
-        </div>
+        <img src="../assets/svg/diamond.svg" alt="diamond icon" class="collection__cards-item-diamond">
       </div>
 
-      <button class="collection__button">View All</button>
-    </section>
+      <div class="collection__cards-item">
+        <img src="../assets/img/shutterstock_1530727334.jpg" alt="product image" class="collection__cards-item-img">
+        <div class="collection__cards-item-content">
+          <h3>Diamond <sub>3</sub></h3>
+          <span></span>
+          <p>The sparkles of the diamonds on this powerful ring symbolize the strength of beauty.</p>
+        </div>
+        <img src="../assets/svg/diamond.svg" alt="diamond icon" class="collection__cards-item-diamond">
+      </div>
+    </div>
+
+    <button class="collection__button">View All</button>
+  </section>
 </template>
 
 <style lang="scss">
