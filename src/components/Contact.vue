@@ -124,14 +124,10 @@ export default {
       font-size: 27px;
     }
 
-    h2 {
-      font-size: 19px;
-    }
+    h2 { font-size: 19px; }
   }
 
-  .contact__description {
-    font-size: var(--section-content);
-  }
+  .contact__description { font-size: var(--section-content); }
 }
 
 @media only screen and (max-width: 1366px) {

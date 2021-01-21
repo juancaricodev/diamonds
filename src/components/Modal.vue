@@ -4,19 +4,105 @@
     <div class="modal-container">
       <div class="modal-container__header">
         <h1>Contact</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, architecto doloribus.</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, architecto doloribus.
+        </p>
       </div>
 
       <form action="" class="modal-container__form">
-        <input type="text" name="name" id="name" placeholder="Name">
-        <input type="text" name="email" id="name" placeholder="Email">
-        <textarea name="message" id="message" cols="30" rows="8" placeholder="Your message here."></textarea>
+        <p v-if="nameError">This field is required.</p>
+        <input
+          type="text"
+          name="name"
+          v-model="name"
+          placeholder="Name"
+        />
+
+        <p v-if="emailError">This field is required.</p>
+        <p v-if="emailInvalid">This email is invalid.</p>
+        <input
+          type="text"
+          name="email"
+          v-model="email"
+          placeholder="Email"
+        />
+
+        <p v-if="messageError">This field is required.</p>
+        <textarea
+          name="message"
+          v-model="message"
+          cols="30"
+          rows="8"
+          placeholder="Your message here."
+        ></textarea>
       </form>
     </div>
 
-    <button type="submit" class="modal__submit">send</button>
+    <button type="submit" class="modal__submit" @click="checkForm">send</button>
   </section>
 </template>
+
+<script>
+import { reactive, toRefs } from 'vue'
+
+export default {
+  setup () {
+    const formState = reactive({
+      name: null,
+      email: null,
+      message: null,
+
+      nameError: false,
+      emailError: false,
+      emailInvalid: false,
+      messageError: false
+    })
+
+    function checkForm (e) {
+      e.preventDefault()
+
+      if (!formState.name) {
+        formState.nameError = true
+      } else {
+        formState.nameError = false
+      }
+
+      if (!formState.email) {
+        formState.emailError = true
+      } else {
+        formState.emailError = false
+      }
+
+      validEmail(formState.email)
+
+      if (!formState.message) {
+        formState.messageError = true
+      } else {
+        formState.messageError = false
+      }
+    }
+
+    function validEmail (email) {
+      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      console.log('regex working')
+      // return re.test(email)
+      if (re.test(email)) {
+        formState.emailInvalid = false
+        console.log(formState.emailInvalid)
+      } else {
+        formState.emailInvalid = true
+        console.log(formState.emailInvalid)
+      }
+    }
+
+    return {
+      ...toRefs(formState),
+      checkForm,
+      validEmail
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 $width-container: 440px;
@@ -93,6 +179,13 @@ $width-container: 440px;
       justify-content: space-around;
       width: 100%;
       height: 100%;
+
+      p {
+        font-family: $poppins;
+        font-size: $section-content;
+        font-weight: 400;
+        color: $color-red;
+      }
 
       input {
         padding: 0 15px;
