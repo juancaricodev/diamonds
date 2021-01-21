@@ -22,7 +22,7 @@
 
         <p class="modal-container__form-group">
           <label v-if="emailError">This field is required.</label>
-          <label v-if="emailInvalid">This email is invalid.</label>
+          <label v-if="emailInvalid">This email address is invalid.</label>
           <input
             type="text"
             name="email"
@@ -73,25 +73,19 @@ export default {
     function checkForm (e) {
       e.preventDefault()
 
-      if (!formState.name) {
-        formState.nameError = true
-      } else {
-        formState.nameError = false
-      }
+      !formState.name
+        ? formState.nameError = true
+        : formState.nameError = false
 
-      if (!formState.email) {
-        formState.emailError = true
-      } else {
-        formState.emailError = false
-      }
+      !formState.email
+        ? formState.emailError = true
+        : formState.emailError = false
 
       validEmail(formState.email)
 
-      if (!formState.message) {
-        formState.messageError = true
-      } else {
-        formState.messageError = false
-      }
+      !formState.message
+        ? formState.messageError = true
+        : formState.messageError = false
 
       submitForm()
     }
@@ -103,9 +97,10 @@ export default {
         formState.emailInvalid ||
         formState.messageError
       ) {
-        console.log('form not submited')
+        console.warn('Form not submited')
+        formState.submitError = false
       } else {
-        console.log('form submited')
+        console.info('Form submited')
         formState.submitError = true
       }
     }
@@ -113,11 +108,9 @@ export default {
     function validEmail (email) {
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
-      if (re.test(email)) {
-        formState.emailInvalid = false
-      } else {
-        formState.emailInvalid = true
-      }
+      re.test(email)
+        ? formState.emailInvalid = false
+        : formState.emailInvalid = true
     }
 
     return {
