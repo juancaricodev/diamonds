@@ -19,8 +19,6 @@ import Collection from './components/Collection.vue'
 import Contact from './components/Contact.vue'
 import Footer from './components/Footer.vue'
 
-// import './assets/styles/global.scss'
-
 export default {
   name: 'App',
   components: {

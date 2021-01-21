@@ -161,17 +161,7 @@
 
   /* Button */
   &__button {
-    width: 200px;
-    height: 48px;
-    font-family: $poppins;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    background-color: $color-white;
-    border: 2px solid $color-black;
-    outline: none;
-    cursor: pointer;
+    @include button($color-white, $color-black, $color-black);
   }
 }
 

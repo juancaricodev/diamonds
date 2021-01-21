@@ -1,4 +1,8 @@
 <template>
+  <Modal v-if="showModal" :show-modal="showModal">
+    <div class="modal-close" @click="showModal = false">Close</div>
+  </Modal>
+
   <section class="contact">
     <div class="contact__title">
       <h1>Contact Us</h1>
@@ -9,17 +13,24 @@
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, velit nihil quia voluptatem odit totam reiciendis consectetur.
     </div>
 
-    <button class="contact__button">Contact</button>
+    <button class="contact__button" @click="showModal = true">Contact</button>
 
-      <div class="scrollup" @click="scrollUpBtn">
+    <div class="scrollup" @click="scrollUpBtn">
       <img src="../assets/svg/arrow-in-circle-point-to-up.svg" alt="go to top icon" class="scrollup__icon">
     </div>
   </section>
 </template>
 
 <script>
+import { reactive, toRefs } from 'vue'
+import Modal from './Modal.vue'
+
 export default {
   setup () {
+    const contactState = reactive({
+      showModal: false
+    })
+
     function scrollUpBtn () {
       const rootElement = document.documentElement
       rootElement.scrollTo({
@@ -29,8 +40,12 @@ export default {
     }
 
     return {
+      ...toRefs(contactState),
       scrollUpBtn
     }
+  },
+  components: {
+    Modal
   }
 }
 </script>
@@ -82,17 +97,7 @@ export default {
 
   &__button {
     grid-column: 3;
-    width: 200px;
-    height: 48px;
-    font-family: $poppins;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    background-color: $color-white;
-    border: 2px solid $color-black;
-    outline: none;
-    cursor: pointer;
+    @include button($color-white, $color-black, $color-black);
   }
 }
 
@@ -119,14 +124,10 @@ export default {
       font-size: 27px;
     }
 
-    h2 {
-      font-size: 19px;
-    }
+    h2 { font-size: 19px; }
   }
 
-  .contact__description {
-    font-size: var(--section-content);
-  }
+  .contact__description { font-size: var(--section-content); }
 }
 
 @media only screen and (max-width: 1366px) {
