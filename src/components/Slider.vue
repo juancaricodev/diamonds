@@ -18,8 +18,66 @@
 
     <button class="slider__btn slider__btn--right"><img src="../assets/svg/arrow.svg" alt="arrow right button"></button>
     <button class="slider__btn slider__btn--left"><img src="../assets/svg/arrow.svg" alt="arrow left button"></button>
+
+    <div class="slider__selector">
+      <div class="slider__selector-group">
+        <img
+          src="../assets/svg/diamond.svg"
+          alt="diamond icon"
+          :style="{ 'diamond-active': first === false }"
+        />
+        <img
+          src="../assets/svg/diamond-gold.svg"
+          alt="diamond icon"
+          :style="{ 'diamond-active': first === true }"
+        />
+      </div>
+
+      <div class="slider__selector-group">
+        <img
+          src="../assets/svg/diamond.svg"
+          alt="diamond icon"
+          :style="{ 'diamond-active': second === false }"
+        />
+        <img
+          src="../assets/svg/diamond-gold.svg"
+          alt="diamond icon"
+          :style="{ 'diamond-active': second === true }"
+        />
+      </div>
+
+      <div class="slider__selector-group">
+        <img
+          src="../assets/svg/diamond.svg"
+          alt="diamond icon"
+          :style="{ 'diamond-active': third === false }"
+        />
+        <img
+          src="../assets/svg/diamond-gold.svg"
+          alt="diamond icon"
+          :style="{ 'diamond-active': third === true }"
+        />
+      </div>
+    </div>
   </section>
 </template>
+
+<script>
+import { reactive, toRefs } from 'vue'
+export default {
+  setup () {
+    const sliderState = reactive({
+      first: true,
+      second: false,
+      third: false
+    })
+
+    return {
+      ...toRefs(sliderState)
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 .slider {
@@ -103,6 +161,28 @@
       grid-column: 1;
       grid-row: 1;
       transform: scaleX(-1);
+    }
+  }
+
+  /* Diamond Selector */
+  &__selector {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-group {
+      display: flex;
+      /* justify-content: center; */
+      /* align-items: center; */
+      gap: 30px;
+
+      img {
+        width: 16px;
+        cursor: pointer;
+      }
     }
   }
 }
