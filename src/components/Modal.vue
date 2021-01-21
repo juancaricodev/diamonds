@@ -2,12 +2,25 @@
   <section class="modal">
     <slot></slot>
     <div class="modal-container">
-      <h1>Modal</h1>
+      <div class="modal-container__header">
+        <h1>Contact</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, architecto doloribus.</p>
+      </div>
+
+      <form action="" class="modal-container__form">
+        <input type="text" name="name" id="name" placeholder="Name">
+        <input type="text" name="email" id="name" placeholder="Email">
+        <textarea name="message" id="message" cols="30" rows="10" placeholder="Your message here."></textarea>
+      </form>
     </div>
+
+    <button type="submit" class="modal__submit">send</button>
   </section>
 </template>
 
 <style lang="scss">
+$width-container: 600px;
+
 .modal {
   position: fixed;
   top: 0;
@@ -20,27 +33,43 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba($color: #000000, $alpha: 0.7);
+  background-color: rgba($color: #000000, $alpha: 0.9);
   z-index: 10;
 
   &-close {
-    display: flex;
-    justify-content: flex-start;
+    width: $width-container;
+    margin-bottom: 20px;
     color: white;
     text-transform: uppercase;
-    text-align: start;
-    margin-bottom: 20px;
     cursor: pointer;
   }
 
   &-container {
     display: flex;
     flex-direction: column;
-    width: 30%;
-    height: 50%;
+    align-items: center;
+    width: $width-container;
+    height: 70%;
     color: $color-black;
     background-color: $color-white;
     opacity: 1;
+
+    &__header {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__submit {
+    margin-top: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
   }
 }
 </style>
