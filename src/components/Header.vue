@@ -1,5 +1,5 @@
 <template>
-   <header class="header" @scroll="scrollHeader">
+   <header class="header" :class="{ 'header--scroll': pageScrolled === true }">
     <div class="header__login">
       <img src="../assets/svg/lock.svg" alt="login logo" />
       <p>Login</p>
@@ -61,13 +61,17 @@ export default {
       homeActive: true,
       aboutActive: false,
       jewelsActive: false,
-      contactActive: false
+      contactActive: false,
+      pageScrolled: false
     })
 
+    window.addEventListener('scroll', scrollHeader)
     function scrollHeader () {
-      // const element = document.querySelector('.header')
-      // element.classList.add('header--scroll')
-      console.log('scroll working')
+      if (window.scrollY > 90) {
+        navbarState.pageScrolled = true
+      } else {
+        navbarState.pageScrolled = false
+      }
     }
 
     function setActive (option) {
@@ -112,6 +116,7 @@ export default {
 
 <style lang="scss">
 .header--scroll {
+  position: fixed;
   width: 80%;
   background-color: white;
   z-index: 1;
@@ -195,7 +200,7 @@ export default {
 
 /* Desktop */
 @media only screen and (max-width: 1366px) {
-  .header { padding: 20px 5%; }
+  /* .header { padding: 20px 5%; } */
 }
 @media only screen and (max-width: 1280px) {
   .header__navbar ul { gap: 50px; }
