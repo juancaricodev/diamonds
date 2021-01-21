@@ -121,6 +121,7 @@ export default {
   background-color: white;
   z-index: 1;
   opacity: 0.9;
+  transition: 0.4s;
 
   &:hover {
     opacity: 1;
@@ -136,6 +137,7 @@ export default {
   font-weight: 500;
   font-size: $text-menu;
   letter-spacing: 2px;
+  transition: 0.4s;
 
   &__login {
     display: flex;
