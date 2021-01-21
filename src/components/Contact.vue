@@ -1,4 +1,6 @@
 <template>
+  <Modal v-show="modalOpen" />
+
   <section class="contact">
     <div class="contact__title">
       <h1>Contact Us</h1>
@@ -9,17 +11,24 @@
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, velit nihil quia voluptatem odit totam reiciendis consectetur.
     </div>
 
-    <button class="contact__button">Contact</button>
+    <button class="contact__button" @click="modalOpen = true">Contact</button>
 
-      <div class="scrollup" @click="scrollUpBtn">
+    <div class="scrollup" @click="scrollUpBtn">
       <img src="../assets/svg/arrow-in-circle-point-to-up.svg" alt="go to top icon" class="scrollup__icon">
     </div>
   </section>
 </template>
 
 <script>
+import { reactive, toRefs } from 'vue'
+import Modal from './Modal.vue'
+
 export default {
   setup () {
+    const modalState = reactive({
+      modalOpen: false
+    })
+
     function scrollUpBtn () {
       const rootElement = document.documentElement
       rootElement.scrollTo({
@@ -29,8 +38,13 @@ export default {
     }
 
     return {
+      ...toRefs(modalState),
+      // showModal,
       scrollUpBtn
     }
+  },
+  components: {
+    Modal
   }
 }
 </script>
