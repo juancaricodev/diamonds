@@ -2,9 +2,11 @@
   "name": "diamonds",
   "version": "1.0.0",
   "private": true,
-  "description": "Landing page developed initially as a simple HTML template. Will grow into a Vue.js app.",
+  "description": "Website 'Diamonds' developed with Vue.js",
   "author": {
-    "email": "juancaricodev@gmail.com"
+    "name": "Juan Camilo Rico Orjuela",
+    "email": "juancaricodev@gmail.com",
+    "url": "https://juancarico.dev/"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
