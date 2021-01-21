@@ -41,6 +41,10 @@
             placeholder="Your message here."
           ></textarea>
         </p>
+
+        <p class="modal-container__form-server-error" v-if="submitError">
+          Unexpected server error ...
+        </p>
       </form>
     </div>
 
@@ -61,7 +65,9 @@ export default {
       nameError: false,
       emailError: false,
       emailInvalid: false,
-      messageError: false
+      messageError: false,
+
+      submitError: false
     })
 
     function checkForm (e) {
@@ -86,6 +92,22 @@ export default {
       } else {
         formState.messageError = false
       }
+
+      submitForm()
+    }
+
+    function submitForm () {
+      if (
+        formState.nameError ||
+        formState.emailError ||
+        formState.emailInvalid ||
+        formState.messageError
+      ) {
+        console.log('form not submited')
+      } else {
+        console.log('form submited')
+        formState.submitError = true
+      }
     }
 
     function validEmail (email) {
@@ -101,7 +123,8 @@ export default {
     return {
       ...toRefs(formState),
       checkForm,
-      validEmail
+      validEmail,
+      submitForm
     }
   }
 }
@@ -202,9 +225,7 @@ $width-container: 440px;
           font-size: $section-medium;
           font-weight: 500;
 
-          &:focus {
-            outline-color: rgba($color: $color-gold, $alpha: 0.7);
-          }
+          &:focus { outline-color: rgba($color: $color-gold, $alpha: 0.7); }
         }
 
         textarea {
@@ -216,10 +237,18 @@ $width-container: 440px;
           font-size: $section-medium;
           font-weight: 500;
 
-          &:focus {
-            outline-color: rgba($color: $color-gold, $alpha: 0.7);
-          }
+          &:focus { outline-color: rgba($color: $color-gold, $alpha: 0.7); }
         }
+      }
+
+      &-server-error {
+        margin: 20px 0;
+        font-family: $poppins;
+        font-size: $section-medium;
+        font-weight: 600;
+        color: $color-red;
+        font-style: italic;
+        text-align: center;
       }
     }
   }
@@ -231,7 +260,7 @@ $width-container: 440px;
 }
 
 @media only screen and (max-height: 768px) {
-  .modal-container__form textarea { height: 8em; }
+  .modal-container__form textarea { height: 5em; }
 }
 
 @media only screen and (min-height: 1024px) {
