@@ -27,5 +27,8 @@ yarn build
 yarn lint
 ```
 
+## Preview
+![image](./src/assets/img/home.jpg)
+
 <!-- ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/). -->
