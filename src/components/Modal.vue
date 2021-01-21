@@ -19,7 +19,7 @@
 </template>
 
 <style lang="scss">
-$width-container: 600px;
+$width-container: 440px;
 
 .modal {
   position: fixed;
@@ -37,7 +37,7 @@ $width-container: 600px;
   z-index: 10;
 
   &-close {
-    width: $width-container;
+    width: calc(#{$width-container} + 60px);
     margin-bottom: 20px;
     color: white;
     text-transform: uppercase;
@@ -45,31 +45,48 @@ $width-container: 600px;
   }
 
   &-container {
+    padding: 50px 30px 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     width: $width-container;
-    height: 70%;
+    height: 60%;
     color: $color-black;
     background-color: $color-white;
+    border-radius: 1px;
     opacity: 1;
 
     &__header {
       display: flex;
       flex-direction: column;
       text-align: center;
+
+      h1 {
+        margin-bottom: 40px;
+      }
+
+      p {
+        margin-bottom: 50px;
+      }
     }
 
     &__form {
       display: flex;
       flex-direction: column;
+      justify-content: space-around;
+      width: 100%;
+      height: 100%;
+
+      input {
+        /* width: 100%; */
+      }
     }
   }
 
   &__submit {
     margin-top: 20px;
-    text-transform: uppercase;
-    cursor: pointer;
+    @include button($color-gold, $color-gold, $color-black);
   }
 }
 </style>
