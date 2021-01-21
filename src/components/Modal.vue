@@ -10,7 +10,7 @@
       <form action="" class="modal-container__form">
         <input type="text" name="name" id="name" placeholder="Name">
         <input type="text" name="email" id="name" placeholder="Email">
-        <textarea name="message" id="message" cols="30" rows="10" placeholder="Your message here."></textarea>
+        <textarea name="message" id="message" cols="30" rows="8" placeholder="Your message here."></textarea>
       </form>
     </div>
 
@@ -33,15 +33,22 @@ $width-container: 440px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba($color: #000000, $alpha: 0.9);
+  background-color: rgba($color: $color-black, $alpha: 0.9);
   z-index: 10;
 
   &-close {
     width: calc(#{$width-container} + 60px);
     margin-bottom: 20px;
     color: white;
+    font-family: $poppins;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
     text-transform: uppercase;
     cursor: pointer;
+    transition: 0.3s;
+
+    &:hover { text-shadow: 0 0 3px rgba($color: $color-white, $alpha: 1); }
   }
 
   &-container {
@@ -63,11 +70,20 @@ $width-container: 440px;
       text-align: center;
 
       h1 {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
+        font-family: $didot;
+        font-size: $section-title;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
       }
 
       p {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
+        font-family: $poppins;
+        font-size: $section-content;
+        font-weight: 400;
+        letter-spacing: 1px;
       }
     }
 
@@ -79,7 +95,30 @@ $width-container: 440px;
       height: 100%;
 
       input {
-        /* width: 100%; */
+        padding: 0 15px;
+        height: 40px;
+        border-color: rgba($color: $color-black, $alpha: 0.2);
+        font-family: $poppins;
+        font-size: $section-medium;
+        font-weight: 500;
+
+        &:focus {
+          outline-color: rgba($color: $color-gold, $alpha: 0.7);
+        }
+      }
+
+      textarea {
+        height: 10em;
+        padding: 15px;
+        border-color: rgba($color: $color-black, $alpha: 0.2);
+        border-width: 2px;
+        font-family: $poppins;
+        font-size: $section-medium;
+        font-weight: 500;
+
+        &:focus {
+          outline-color: rgba($color: $color-gold, $alpha: 0.7);
+        }
       }
     }
   }
@@ -88,5 +127,13 @@ $width-container: 440px;
     margin-top: 20px;
     @include button($color-gold, $color-gold, $color-black);
   }
+}
+
+@media only screen and (max-height: 768px) {
+  .modal-container__form textarea { height: 8em; }
+}
+
+@media only screen and (min-height: 1024px) {
+  .modal-container__form textarea { height: 14em; }
 }
 </style>
