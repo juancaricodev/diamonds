@@ -12,7 +12,7 @@
         </a>
         <img
           class="header__navbar-diamond"
-          src="../assets/svg/diamond.svg"
+          src="../assets/svg/diamond-gold.svg"
           alt="diamond icon"
         />
       </div>
@@ -21,7 +21,7 @@
         <a @click="scrollOption('.slider'), setActive('aboutActive')">
           <p>ABOUT</p>
         </a>
-        <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
+        <img class="header__navbar-diamond" src="../assets/svg/diamond-gold.svg" alt="diamond icon">
       </div>
 
       <div>
@@ -32,14 +32,14 @@
         <a @click="scrollOption('.collection'), setActive('jewelsActive')">
           <p>JEWELS</p>
         </a>
-        <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
+        <img class="header__navbar-diamond" src="../assets/svg/diamond-gold.svg" alt="diamond icon">
       </div>
 
       <div :class="{ active: contactActive === true }">
         <a @click="scrollOption('.contact'), setActive('contactActive')">
           <p>CONTACT</p>
         </a>
-        <img class="header__navbar-diamond" src="../assets/svg/diamond.svg" alt="diamond icon">
+        <img class="header__navbar-diamond" src="../assets/svg/diamond-gold.svg" alt="diamond icon">
       </div>
     </nav>
 
