@@ -10,31 +10,37 @@
       </div>
 
       <form action="" class="modal-container__form">
-        <p v-if="nameError">This field is required.</p>
-        <input
-          type="text"
-          name="name"
-          v-model="name"
-          placeholder="Name"
-        />
+        <p class="modal-container__form-group">
+          <label v-if="nameError">This field is required.</label>
+          <input
+            type="text"
+            name="name"
+            v-model="name"
+            placeholder="Name"
+          />
+        </p>
 
-        <p v-if="emailError">This field is required.</p>
-        <p v-if="emailInvalid">This email is invalid.</p>
-        <input
-          type="text"
-          name="email"
-          v-model="email"
-          placeholder="Email"
-        />
+        <p class="modal-container__form-group">
+          <label v-if="emailError">This field is required.</label>
+          <label v-if="emailInvalid">This email is invalid.</label>
+          <input
+            type="text"
+            name="email"
+            v-model="email"
+            placeholder="Email"
+          />
+        </p>
 
-        <p v-if="messageError">This field is required.</p>
-        <textarea
-          name="message"
-          v-model="message"
-          cols="30"
-          rows="8"
-          placeholder="Your message here."
-        ></textarea>
+        <p class="modal-container__form-group">
+          <label v-if="messageError">This field is required.</label>
+          <textarea
+            name="message"
+            v-model="message"
+            cols="30"
+            rows="8"
+            placeholder="Your message here."
+          ></textarea>
+        </p>
       </form>
     </div>
 
@@ -84,14 +90,11 @@ export default {
 
     function validEmail (email) {
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      console.log('regex working')
-      // return re.test(email)
+
       if (re.test(email)) {
         formState.emailInvalid = false
-        console.log(formState.emailInvalid)
       } else {
         formState.emailInvalid = true
-        console.log(formState.emailInvalid)
       }
     }
 
@@ -180,37 +183,42 @@ $width-container: 440px;
       width: 100%;
       height: 100%;
 
-      p {
-        font-family: $poppins;
-        font-size: $section-content;
-        font-weight: 400;
-        color: $color-red;
-      }
+      &-group {
+        display: flex;
+        flex-direction: column;
 
-      input {
-        padding: 0 15px;
-        height: 40px;
-        border-color: rgba($color: $color-black, $alpha: 0.2);
-        font-family: $poppins;
-        font-size: $section-medium;
-        font-weight: 500;
-
-        &:focus {
-          outline-color: rgba($color: $color-gold, $alpha: 0.7);
+        label {
+          font-family: $poppins;
+          font-size: $section-content;
+          font-weight: 400;
+          color: $color-red;
         }
-      }
 
-      textarea {
-        height: 10em;
-        padding: 15px;
-        border-color: rgba($color: $color-black, $alpha: 0.2);
-        border-width: 2px;
-        font-family: $poppins;
-        font-size: $section-medium;
-        font-weight: 500;
+        input {
+          padding: 0 15px;
+          height: 40px;
+          border-color: rgba($color: $color-black, $alpha: 0.2);
+          font-family: $poppins;
+          font-size: $section-medium;
+          font-weight: 500;
 
-        &:focus {
-          outline-color: rgba($color: $color-gold, $alpha: 0.7);
+          &:focus {
+            outline-color: rgba($color: $color-gold, $alpha: 0.7);
+          }
+        }
+
+        textarea {
+          height: 10em;
+          padding: 15px;
+          border-color: rgba($color: $color-black, $alpha: 0.2);
+          border-width: 2px;
+          font-family: $poppins;
+          font-size: $section-medium;
+          font-weight: 500;
+
+          &:focus {
+            outline-color: rgba($color: $color-gold, $alpha: 0.7);
+          }
         }
       }
     }
