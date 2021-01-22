@@ -11,7 +11,7 @@
       </p>
     </div>
 
-    <div class="collection__cards">
+    <div class="collection__cards" v-if="cardsOpen">
       <div
         class="collection__cards-item"
         v-for="card in cards"
@@ -31,7 +31,27 @@
       </div>
     </div>
 
-    <button class="collection__button" @click="viewAll">{{ buttonLabel }}</button>
+    <div class="collection__cards" v-if="!cardsOpen">
+      <div
+        class="collection__cards-item"
+        v-for="card in cards.slice(0, 3)"
+        :key="card.title"
+      >
+        <img
+          src="../assets/img/shutterstock_1530727334.jpg"
+          alt="product image"
+          class="collection__cards-item-img"
+        />
+        <div class="collection__cards-item-content">
+          <h3>{{ card.title }}</h3>
+          <span></span>
+          <p>{{ card.description }}</p>
+        </div>
+        <img src="../assets/svg/diamond-gold.svg" alt="diamond icon" class="collection__cards-item-diamond">
+      </div>
+    </div>
+
+    <button class="collection__button" @click="cardsOpen = !cardsOpen">{{ buttonLabel }}</button>
   </section>
 </template>
 
@@ -44,10 +64,18 @@ export default {
 
       buttonLabel: computed(() => {
         if (collectionState.cardsOpen === true) {
-          return 'Show less'
+          return 'View less'
         }
         return 'View all'
       })
+
+      // renderCondition: computed(() => {
+      //   if (collectionState.cardsOpen === true) {
+      //     return cards
+      //   }
+      //   const fewCards = cards.slice(0, 3)
+      //   return fewCards
+      // })
     })
 
     const cards = ref([
@@ -98,15 +126,14 @@ export default {
       }
     ])
 
-    function viewAll () {
-      collectionState.cardsOpen = true
-      console.log(`button working: ${collectionState.cardsOpen}`)
-    }
+    // function viewAll () {
+    //   collectionState.cardsOpen = true
+    // }
 
     return {
       ...toRefs(collectionState),
-      cards,
-      viewAll
+      cards
+      // viewAll
     }
   }
 }
