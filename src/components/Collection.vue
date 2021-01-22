@@ -31,16 +31,23 @@
       </div>
     </div>
 
-    <button class="collection__button" @click="viewAll">View All</button>
+    <button class="collection__button" @click="viewAll">{{ buttonLabel }}</button>
   </section>
 </template>
 
 <script>
-import { reactive, ref, toRefs } from 'vue'
+import { computed, reactive, ref, toRefs } from 'vue'
 export default {
   setup () {
     const collectionState = reactive({
-      cardsOpen: false
+      cardsOpen: false,
+
+      buttonLabel: computed(() => {
+        if (collectionState.cardsOpen === true) {
+          return 'Show less'
+        }
+        return 'View all'
+      })
     })
 
     const cards = ref([
