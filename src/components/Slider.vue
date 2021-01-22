@@ -5,33 +5,23 @@
 
       <div class="carousel__slider">
 
-        <div class="carousel__slider-section">
-          <img src="../assets/img/jewelry-carousel.jpg" alt="slider image">
-          <h2>Diamonds 1</h2>
+        <div class="carousel__slider-section" v-for="slide in slides" :key="slide.title">
+          <img
+            v-if="slide.img"
+            :src="slide.img"
+            alt="slider image"
+          />
+          <img
+            v-if="!slide.img"
+            src="../assets/img/jewelry-carousel2.png"
+            alt="slider image"
+          />
+          <h2>{{ slide.title }}</h2>
           <div class="hl-divider"></div>
           <p class="slider__text-content">
-            Diamonds are the brightest stars and only the sky is the limit when it comes to achieving our jewels.
+            {{ slide.description }}
           </p>
         </div>
-
-        <div class="carousel__slider-section">
-          <img src="../assets/img/jewelry-carousel2.png" alt="slider image">
-          <h2>Diamonds 2</h2>
-          <div class="hl-divider"></div>
-          <p class="slider__text-content">
-            Diamonds are the brightest stars and only the sky is the limit when it comes to achieving our jewels.
-          </p>
-        </div>
-
-        <div class="carousel__slider-section">
-          <img src="../assets/img/jewelry-carousel.jpg" alt="slider image">
-          <h2>Diamonds 3</h2>
-          <div class="hl-divider"></div>
-          <p class="slider__text-content">
-            Diamonds are the brightest stars and only the sky is the limit when it comes to achieving our jewels.
-          </p>
-        </div>
-
       </div>
 
       <div class="carousel__controls">
@@ -87,7 +77,7 @@
 </template>
 
 <script>
-import { reactive, toRefs } from 'vue'
+import { reactive, ref, toRefs } from 'vue'
 export default {
   setup () {
     const sliderState = reactive({
@@ -95,6 +85,24 @@ export default {
       second: false,
       third: false
     })
+
+    const slides = ref([
+      {
+        title: 'Diamonds 1',
+        description: 'Diamonds are the brightest stars and only the sky is the limit when it comes to achieving our jewels.',
+        img: 'https://res.cloudinary.com/dncmrxklt/image/upload/v1611317451/jewelry-carousel_yqqeha.jpg'
+      },
+      {
+        title: 'Diamonds 2',
+        description: 'You see a glimmer of light at the end of the darkness. Is a small lake of water with a waterfall. Lake of diamonds',
+        img: 'https://res.cloudinary.com/dncmrxklt/image/upload/v1611317460/jewelry-carousel2_t9plag.png'
+      },
+      {
+        title: 'Diamonds 3',
+        description: 'We may share our diamonds with one soul, or we may find a few who we trust with our jewels',
+        img: 'https://res.cloudinary.com/dncmrxklt/image/upload/v1611317616/diamonds-003_wxxoia.jpg'
+      }
+    ])
 
     let sectionIndex = 0
 
@@ -148,6 +156,7 @@ export default {
 
     return {
       ...toRefs(sliderState),
+      slides,
       selector,
       clickRight,
       clickLeft
