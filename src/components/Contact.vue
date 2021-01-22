@@ -1,5 +1,5 @@
 <template>
-  <Modal v-if="showModal" :show-modal="showModal">
+  <Modal v-if="showModal" @click.self="showModal = false">
     <div class="modal-close" @click="showModal = false">Close</div>
   </Modal>
 
@@ -36,6 +36,16 @@ export default {
       rootElement.scrollTo({
         top: 0,
         behavior: 'smooth'
+      })
+    }
+
+    if (contactState.showModal === true) {
+      console.log('working')
+      document.addEventListener('click', e => {
+        const modal = document.querySelector('.modal-container')
+        if (!modal.contains(e.target)) {
+          contactState.showModal = false
+        }
       })
     }
 
