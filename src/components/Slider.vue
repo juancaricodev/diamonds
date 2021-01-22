@@ -1,119 +1,263 @@
 <template>
-  <section class="slider">
-    <img class="slider__img" src="../assets/img/jewelry-carousel.jpg" alt="slider image">
-    <!-- <img class="slider__img" src="../assets/img/jewelry-carousel2.png" alt="slider image">
-    <img class="slider__img" src="../assets/img/jewelry-carousel.jpg" alt="slider image"> -->
+  <section class="slider-container">
 
-    <div class="slider-position">
-      <div class="slider__text">
-        <h2 class="slider__text-title">Diamonds</h2>
+    <div class="carousel">
 
-        <div class="slider__text-hl"></div>
+      <div class="carousel__slider">
 
-        <p class="slider__text-content">
-          Diamonds are the brightest stars and only the sky is the limit when it comes to achieving our jewels.
-        </p>
+        <div class="carousel__slider-section">
+          <img src="../assets/img/jewelry-carousel.jpg" alt="slider image">
+          <h2>Diamonds 1</h2>
+          <div class="hl-divider"></div>
+          <p class="slider__text-content">
+            Diamonds are the brightest stars and only the sky is the limit when it comes to achieving our jewels.
+          </p>
+        </div>
+
+        <div class="carousel__slider-section">
+          <img src="../assets/img/jewelry-carousel2.png" alt="slider image">
+          <h2>Diamonds 2</h2>
+          <div class="hl-divider"></div>
+          <p class="slider__text-content">
+            Diamonds are the brightest stars and only the sky is the limit when it comes to achieving our jewels.
+          </p>
+        </div>
+
+        <div class="carousel__slider-section">
+          <img src="../assets/img/jewelry-carousel.jpg" alt="slider image">
+          <h2>Diamonds 3</h2>
+          <div class="hl-divider"></div>
+          <p class="slider__text-content">
+            Diamonds are the brightest stars and only the sky is the limit when it comes to achieving our jewels.
+          </p>
+        </div>
+
       </div>
-    </div>
 
-    <button class="slider__btn slider__btn--right"><img src="../assets/svg/arrow.svg" alt="arrow right button"></button>
-    <button class="slider__btn slider__btn--left"><img src="../assets/svg/arrow.svg" alt="arrow left button"></button>
+      <div class="carousel__controls">
+        <button class="carousel__controls--right" @click="clickRight">
+          <img src="../assets/svg/arrow.svg" alt="arrow right button">
+        </button>
+        <button class="carousel__controls--left" @click="clickLeft">
+          <img src="../assets/svg/arrow.svg" alt="arrow left button">
+        </button>
+
+        <ul>
+          <li @click="selector('first')">
+            <img
+              src="../assets/svg/diamond-gold.svg"
+              alt="diamond icon"
+              v-if="first"
+            />
+            <img
+              src="../assets/svg/diamond.svg"
+              alt="diamond icon"
+              v-if="!first"
+            />
+          </li>
+          <li @click="selector('second')">
+            <img
+              src="../assets/svg/diamond-gold.svg"
+              alt="diamond icon"
+              v-if="second"
+            />
+            <img
+              src="../assets/svg/diamond.svg"
+              alt="diamond icon"
+              v-if="!second"
+            />
+          </li>
+          <li @click="selector('third')">
+            <img
+              src="../assets/svg/diamond-gold.svg"
+              alt="diamond icon"
+              v-if="third"
+            />
+            <img
+              src="../assets/svg/diamond.svg"
+              alt="diamond icon"
+              v-if="!third"
+            />
+          </li>
+        </ul>
+      </div>
+
+    </div>
   </section>
 </template>
 
-<style lang="scss">
-.slider {
-  display: grid;
-  grid-template-columns: 10% auto 10%;
-  grid-template-rows: 1fr;
+<script>
+import { reactive, toRefs } from 'vue'
+export default {
+  setup () {
+    const sliderState = reactive({
+      first: true,
+      second: false,
+      third: false
+    })
 
-  /* Background Image */
-  &__img {
-    position: relative;
-    grid-column: 1 / span 3;
-    width: 100%;
-    filter: brightness(0.3);
-  }
+    let sectionIndex = 0
 
-  &-position {
-    grid-column: 2;
-    grid-row: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* Text */
-  &__text {
-    position: absolute;
-    top: 35%;
-    grid-column: 2;
-    grid-row: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 360px;
-    gap: 30px;
-    color: $color-white;
-    opacity: 0.9;
-
-    &-title {
-      font-family: $didot;
-      text-transform: uppercase;
-      font-size: $section-title;
-      font-weight: 500;
-      letter-spacing: 2px;
+    function selector (index) {
+      if (index === 'first') {
+        sliderState.first = true
+        sliderState.second = false
+        sliderState.third = false
+        document.querySelector('.carousel__slider').style.transform = 'translate(' + (0) * -33.33 + '%)'
+        sectionIndex = 0
+      } else if (index === 'second') {
+        sliderState.first = false
+        sliderState.second = true
+        sliderState.third = false
+        document.querySelector('.carousel__slider').style.transform = 'translate(' + (1) * -33.33 + '%)'
+        sectionIndex = 1
+      } else if (index === 'third') {
+        sliderState.first = false
+        sliderState.second = false
+        sliderState.third = true
+        document.querySelector('.carousel__slider').style.transform = 'translate(' + (2) * -33.33 + '%)'
+        sectionIndex = 2
+      }
     }
 
-    &-hl {
-      width: 250px;
-      border-bottom: solid $color-white 1px;
+    function clickRight () {
+      sectionIndex = sectionIndex < 2 ? sectionIndex + 1 : 2
+      document.querySelector('.carousel__slider').style.transform = 'translate(' + (sectionIndex) * -33.33 + '%)'
+
+      if (sectionIndex === 0) {
+        selector('first')
+      } else if (sectionIndex === 1) {
+        selector('second')
+      } else if (sectionIndex === 2) {
+        selector('third')
+      }
     }
 
-    &-content {
-      font-family: $poppins;
-      font-size: $section-content;
-      font-weight: 300;
-      letter-spacing: 2px;
-      text-align: center;
-    }
-  }
+    function clickLeft () {
+      sectionIndex = sectionIndex > 0 ? sectionIndex - 1 : 0
+      document.querySelector('.carousel__slider').style.transform = 'translate(' + (sectionIndex) * -33.33 + '%)'
 
-  /* Button */
-  &__btn {
-    position: absolute;
-    top: 45%;
-    background: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-
-    img {
-      width: 27px;
+      if (sectionIndex === 0) {
+        selector('first')
+      } else if (sectionIndex === 1) {
+        selector('second')
+      } else if (sectionIndex === 2) {
+        selector('third')
+      }
     }
 
-    &--right {
-      right: 10%;
-      grid-column: 3;
-      grid-row: 1;
-    }
-
-    &--left {
-      left: 10%;
-      grid-column: 1;
-      grid-row: 1;
-      transform: scaleX(-1);
+    return {
+      ...toRefs(sliderState),
+      selector,
+      clickRight,
+      clickLeft
     }
   }
 }
+</script>
 
-/* Desktop */
-@media only screen and (max-width: 1024px) {
-  .slider__text {
-    top: 25%;
-  }
-  .slider__btn {
-    top: 35%
+<style lang="scss">
+.slider-container {
+  width: 100%;
+  margin:20px auto;
+
+  /* Carousel */
+  .carousel {
+    position: relative;
+    height: 700px;
+    overflow: hidden;
+
+    &__slider {
+      display: flex;
+      height: 100%;
+      width: 300%;
+      transition: all 0.7s;
+
+      &-section {
+        width: 100vw;
+        flex-basis: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        gap: 30px;
+        color: $color-white;
+
+        img {
+          position: absolute;
+          width: 100vw;
+          height: 100%;
+          z-index: -1;
+          filter: brightness(0.25);
+        }
+
+        h2 {
+          font-family: $didot;
+          text-transform: uppercase;
+          font-size: $section-title;
+          font-weight: 500;
+          letter-spacing: 2px;
+        }
+
+        .hl-divider {
+          width: 250px;
+          border-bottom: solid $color-white 1px;
+        }
+
+        p {
+          width: 340px;
+          font-family: $poppins;
+          font-size: $section-content;
+          font-weight: 300;
+          letter-spacing: 2px;
+          text-align: center;
+        }
+      }
+    }
+
+    &__controls {
+      /* Button */
+      button {
+        position: absolute;
+        top: 45%;
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        img {
+          width: 27px;
+          transition: 0.3s;
+
+          &:hover { width: 29px; }
+        }
+      }
+
+      &--right { right: 10%; }
+
+      &--left {
+        left: 10%;
+        transform: scaleX(-1);
+      }
+
+      ul {
+        position: absolute;
+        left: 50%;
+        bottom: 30px;
+        display: flex;
+        gap: 17px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        transform: translate(-50%);
+
+        li {
+          cursor: pointer;
+
+          img { width: 16px; }
+        }
+      }
+    }
   }
 }
 </style>
