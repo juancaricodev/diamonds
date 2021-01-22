@@ -68,14 +68,6 @@ export default {
         }
         return 'View all'
       })
-
-      // renderCondition: computed(() => {
-      //   if (collectionState.cardsOpen === true) {
-      //     return cards
-      //   }
-      //   const fewCards = cards.slice(0, 3)
-      //   return fewCards
-      // })
     })
 
     const cards = ref([
@@ -126,14 +118,9 @@ export default {
       }
     ])
 
-    // function viewAll () {
-    //   collectionState.cardsOpen = true
-    // }
-
     return {
       ...toRefs(collectionState),
       cards
-      // viewAll
     }
   }
 }
