@@ -32,8 +32,12 @@
       </div>
 
       <div class="carousel__controls">
-        <button class="carousel__controls--right"><img src="../assets/svg/arrow.svg" alt="arrow right button"></button>
-        <button class="carousel__controls--left"><img src="../assets/svg/arrow.svg" alt="arrow left button"></button>
+        <button class="carousel__controls--right" @click="clickRight">
+          <img src="../assets/svg/arrow.svg" alt="arrow right button">
+        </button>
+        <button class="carousel__controls--left" @click="clickLeft">
+          <img src="../assets/svg/arrow.svg" alt="arrow left button">
+        </button>
       </div>
 
     </div>
@@ -91,8 +95,24 @@ export default {
       third: false
     })
 
+    // const slider = document.querySelector('.carousel__slider')
+
+    let sectionIndex = 0
+
+    function clickRight () {
+      sectionIndex = sectionIndex < 2 ? sectionIndex + 1 : 2
+      document.querySelector('.carousel__slider').style.transform = 'translate(' + (sectionIndex) * -33.33 + '%)'
+    }
+
+    function clickLeft () {
+      sectionIndex = sectionIndex > 0 ? sectionIndex - 1 : 0
+      document.querySelector('.carousel__slider').style.transform = 'translate(' + (sectionIndex) * -33.33 + '%)'
+    }
+
     return {
-      ...toRefs(sliderState)
+      ...toRefs(sliderState),
+      clickRight,
+      clickLeft
     }
   }
 }
@@ -125,6 +145,7 @@ export default {
       display: flex;
       height: 100%;
       width: 300%;
+      transition: all 0.7s;
 
       section {
         flex-basis: 100%;
