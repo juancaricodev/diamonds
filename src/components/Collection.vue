@@ -199,9 +199,7 @@ export default {
       height: 500px;
       text-align: center;
       border-radius: 2px;
-      box-shadow: 3px 1px 30px -8px rgba(0,0,0,0.15);
-      -webkit-box-shadow: 3px 1px 30px -8px rgba(0,0,0,0.15);
-      -moz-box-shadow: 3px 1px 30px -8px rgba(0,0,0,0.15);
+      @include box-shadow-medium;
 
       &-img {
         width: 60%;

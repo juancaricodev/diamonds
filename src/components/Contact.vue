@@ -58,9 +58,7 @@ export default {
   display: grid;
   align-items: center;
   grid-template-columns: 400px auto 200px;
-  box-shadow: 3px 1px 50px -25px rgba(0,0,0,0.15);
-  -webkit-box-shadow: 3px 1px 50px -25px rgba(0,0,0,0.15);
-  -moz-box-shadow: 3px 1px 50px -25px rgba(0,0,0,0.15);
+  @include box-shadow-soft;
 
   &__title {
     grid-column: 1;
