@@ -43,9 +43,42 @@
         </button>
 
         <ul>
-          <li><img src="../assets/svg/diamond.svg" alt="diamond icon"></li>
-          <li><img src="../assets/svg/diamond.svg" alt="diamond icon"></li>
-          <li><img src="../assets/svg/diamond.svg" alt="diamond icon"></li>
+          <li @click="selector('first')">
+            <img
+              src="../assets/svg/diamond-gold.svg"
+              alt="diamond icon"
+              v-if="first"
+            />
+            <img
+              src="../assets/svg/diamond.svg"
+              alt="diamond icon"
+              v-if="!first"
+            />
+          </li>
+          <li @click="selector('second')">
+            <img
+              src="../assets/svg/diamond-gold.svg"
+              alt="diamond icon"
+              v-if="second"
+            />
+            <img
+              src="../assets/svg/diamond.svg"
+              alt="diamond icon"
+              v-if="!second"
+            />
+          </li>
+          <li @click="selector('third')">
+            <img
+              src="../assets/svg/diamond-gold.svg"
+              alt="diamond icon"
+              v-if="third"
+            />
+            <img
+              src="../assets/svg/diamond.svg"
+              alt="diamond icon"
+              v-if="!third"
+            />
+          </li>
         </ul>
       </div>
 
@@ -63,22 +96,66 @@ export default {
       third: false
     })
 
-    // const slider = document.querySelector('.carousel__slider')
-
     let sectionIndex = 0
+
+    // document.querySelectorAll('.carousel__controls li').forEach((indicator, ind) => {
+    //   indicator.addEventListener('click', () => {
+    //     document.querySelector('.carousel__slider').style.transform = 'translate(' + (ind) * -33.33 + '%)'
+    //     console.log(sectionIndex)
+    //   })
+    // })
+
+    function selector (index) {
+      if (index === 'first') {
+        sliderState.first = true
+        sliderState.second = false
+        sliderState.third = false
+        document.querySelector('.carousel__slider').style.transform = 'translate(' + (0) * -33.33 + '%)'
+        sectionIndex = 0
+      } else if (index === 'second') {
+        sliderState.first = false
+        sliderState.second = true
+        sliderState.third = false
+        document.querySelector('.carousel__slider').style.transform = 'translate(' + (1) * -33.33 + '%)'
+        sectionIndex = 1
+      } else if (index === 'third') {
+        sliderState.first = false
+        sliderState.second = false
+        sliderState.third = true
+        document.querySelector('.carousel__slider').style.transform = 'translate(' + (2) * -33.33 + '%)'
+        sectionIndex = 2
+      }
+    }
 
     function clickRight () {
       sectionIndex = sectionIndex < 2 ? sectionIndex + 1 : 2
       document.querySelector('.carousel__slider').style.transform = 'translate(' + (sectionIndex) * -33.33 + '%)'
+
+      if (sectionIndex === 0) {
+        selector('first')
+      } else if (sectionIndex === 1) {
+        selector('second')
+      } else if (sectionIndex === 2) {
+        selector('third')
+      }
     }
 
     function clickLeft () {
       sectionIndex = sectionIndex > 0 ? sectionIndex - 1 : 0
       document.querySelector('.carousel__slider').style.transform = 'translate(' + (sectionIndex) * -33.33 + '%)'
+
+      if (sectionIndex === 0) {
+        selector('first')
+      } else if (sectionIndex === 1) {
+        selector('second')
+      } else if (sectionIndex === 2) {
+        selector('third')
+      }
     }
 
     return {
       ...toRefs(sliderState),
+      selector,
       clickRight,
       clickLeft
     }
@@ -205,27 +282,6 @@ export default {
             width: 16px;
           }
         }
-      }
-    }
-  }
-
-  /* Diamond Selector */
-  &__selector {
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &-group {
-      display: flex;
-      /* justify-content: center; */
-      /* align-items: center; */
-      gap: 30px;
-
-      img {
-        visibility: hidden;
       }
     }
   }
