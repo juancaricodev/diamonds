@@ -18,7 +18,7 @@
       </div>
 
       <div :class="{ active: aboutActive === true }">
-        <a @click="scrollOption('.slider'), setActive('aboutActive')">
+        <a @click="scrollOption('.slider-container'), setActive('aboutActive')">
           <p>ABOUT</p>
         </a>
         <img class="header__navbar-diamond" src="../assets/svg/diamond-gold.svg" alt="diamond icon">
@@ -117,6 +117,7 @@ export default {
 <style lang="scss">
 .header--scroll {
   position: fixed;
+  top: 0;
   width: 80%;
   background-color: white;
   z-index: 1;

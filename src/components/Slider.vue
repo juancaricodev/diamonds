@@ -98,13 +98,6 @@ export default {
 
     let sectionIndex = 0
 
-    // document.querySelectorAll('.carousel__controls li').forEach((indicator, ind) => {
-    //   indicator.addEventListener('click', () => {
-    //     document.querySelector('.carousel__slider').style.transform = 'translate(' + (ind) * -33.33 + '%)'
-    //     console.log(sectionIndex)
-    //   })
-    // })
-
     function selector (index) {
       if (index === 'first') {
         sliderState.first = true
@@ -168,24 +161,11 @@ export default {
   width: 100%;
   margin:20px auto;
 
-  /* Background Image
-  &__img {
-    position: relative;
-    grid-column: 1 / span 3;
-    width: 100%;
-    filter: brightness(0.3);
-  } */
-
   /* Carousel */
   .carousel {
-    /* border: 2px solid #416be4; */
     position: relative;
     height: 700px;
     overflow: hidden;
-    /* border-radius: 5px; */
-    /* background: #000;
-    opacity: 1; */
-    /* box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.1); */
 
     &__slider {
       display: flex;
@@ -202,8 +182,6 @@ export default {
         display: flex;
         gap: 30px;
         color: $color-white;
-        /* background-image: url(../assets/img/jewelry-carousel.jpg);
-        filter: brightness(0.3); */
 
         img {
           position: absolute;
@@ -242,8 +220,6 @@ export default {
       button {
         position: absolute;
         top: 45%;
-        /* top: 50%;
-        transform: translateY(-50%); */
         background: transparent;
         border: none;
         outline: none;
@@ -278,22 +254,10 @@ export default {
         li {
           cursor: pointer;
 
-          img {
-            width: 16px;
-          }
+          img { width: 16px; }
         }
       }
     }
-  }
-}
-
-/* Desktop */
-@media only screen and (max-width: 1024px) {
-  .slider__text {
-    top: 25%;
-  }
-  .slider__btn {
-    top: 35%
   }
 }
 </style>
