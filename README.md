@@ -39,6 +39,6 @@ yarn lint
 Distributed under the GPLv3 License. See `LICENSE` for more information.
 
 ## Contact
-Juan Camilo Rico Orjuela: [@juancaricodev](https://twitter.com/your_username) - juancaricodev@gmail.com
+Juan Camilo Rico Orjuela: [@juancaricodev](https://twitter.com/juancaricodev) - juancaricodev@gmail.com
 
-Repo Link: [https://github.com/juancaricodev/diamonds](https://github.com/juancaricodev/repo_name)
+Repo Link: [https://github.com/juancaricodev/diamonds](https://github.com/juancaricodev/diamonds)
