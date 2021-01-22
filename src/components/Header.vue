@@ -76,25 +76,18 @@ export default {
     }
 
     function setActive (option) {
+      navbarState.homeActive = false
+      navbarState.aboutActive = false
+      navbarState.jewelsActive = false
+      navbarState.contactActive = false
+
       if (option === 'homeActive') {
         navbarState.homeActive = true
-        navbarState.aboutActive = false
-        navbarState.jewelsActive = false
-        navbarState.contactActive = false
       } else if (option === 'aboutActive') {
-        navbarState.homeActive = false
         navbarState.aboutActive = true
-        navbarState.jewelsActive = false
-        navbarState.contactActive = false
       } else if (option === 'jewelsActive') {
-        navbarState.homeActive = false
-        navbarState.aboutActive = false
         navbarState.jewelsActive = true
-        navbarState.contactActive = false
       } else if (option === 'contactActive') {
-        navbarState.homeActive = false
-        navbarState.aboutActive = false
-        navbarState.jewelsActive = false
         navbarState.contactActive = true
       }
     }
