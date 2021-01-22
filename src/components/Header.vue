@@ -92,23 +92,17 @@ export default {
       }
     }
 
-    function scrollUpBtn () {
-      // const rootElement = document.documentElement
-      // rootElement.scrollTo({
-      //   top: 0,
-      //   behavior: 'smooth'
-      // })
-    }
-
     function scrollOption (selector) {
       const element = document.querySelector(selector)
+      if (selector === '.header') {
+        element.classList.remove('header--scroll')
+      }
       element.scrollIntoView({ behavior: 'smooth' })
     }
 
     return {
       ...toRefs(navbarState),
       scrollOption,
-      scrollUpBtn,
       setActive,
       scrollHeader
     }
@@ -146,6 +140,7 @@ export default {
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
 
     img { width: 18px; }
   }
@@ -180,6 +175,7 @@ export default {
     &-lang {
       display: inherit;
       gap: 10px;
+      cursor: pointer;
 
       img { width: 17px; }
     }
@@ -187,6 +183,7 @@ export default {
     &-icon {
       margin-left: 20px;
       width: 25px;
+      cursor: pointer;
     }
   }
 
