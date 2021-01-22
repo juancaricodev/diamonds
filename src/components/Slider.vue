@@ -41,50 +41,15 @@
         <button class="carousel__controls--left" @click="clickLeft">
           <img src="../assets/svg/arrow.svg" alt="arrow left button">
         </button>
+
+        <ul>
+          <li><img src="../assets/svg/diamond.svg" alt="diamond icon"></li>
+          <li><img src="../assets/svg/diamond.svg" alt="diamond icon"></li>
+          <li><img src="../assets/svg/diamond.svg" alt="diamond icon"></li>
+        </ul>
       </div>
 
     </div>
-
-    <!-- <div class="slider__selector">
-      <div class="slider__selector-group">
-        <img
-          src="../assets/svg/diamond.svg"
-          alt="diamond icon"
-          :style="{ 'diamond-active': first === false }"
-        />
-        <img
-          src="../assets/svg/diamond-gold.svg"
-          alt="diamond icon"
-          :style="{ 'diamond-active': first === true }"
-        />
-      </div>
-
-      <div class="slider__selector-group">
-        <img
-          src="../assets/svg/diamond.svg"
-          alt="diamond icon"
-          :style="{ 'diamond-active': second === false }"
-        />
-        <img
-          src="../assets/svg/diamond-gold.svg"
-          alt="diamond icon"
-          :style="{ 'diamond-active': second === true }"
-        />
-      </div>
-
-      <div class="slider__selector-group">
-        <img
-          src="../assets/svg/diamond.svg"
-          alt="diamond icon"
-          :style="{ 'diamond-active': third === false }"
-        />
-        <img
-          src="../assets/svg/diamond-gold.svg"
-          alt="diamond icon"
-          :style="{ 'diamond-active': third === true }"
-        />
-      </div>
-    </div> -->
   </section>
 </template>
 
@@ -138,7 +103,7 @@ export default {
   .carousel {
     /* border: 2px solid #416be4; */
     position: relative;
-    height: 600px;
+    height: 700px;
     overflow: hidden;
     /* border-radius: 5px; */
     /* background: #000;
@@ -220,6 +185,26 @@ export default {
       &--left {
         left: 10%;
         transform: scaleX(-1);
+      }
+
+      ul {
+        position: absolute;
+        left: 50%;
+        bottom: 30px;
+        display: flex;
+        gap: 17px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        transform: translate(-50%);
+
+        li {
+          cursor: pointer;
+
+          img {
+            width: 16px;
+          }
+        }
       }
     }
   }
