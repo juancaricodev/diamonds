@@ -1,10 +1,7 @@
 <template>
   <section class="slider-container">
-
     <div class="carousel">
-
       <div class="carousel__slider">
-
         <div class="carousel__slider-section" v-for="slide in slides" :key="slide.title">
           <img
             v-if="slide.img"
@@ -71,7 +68,6 @@
           </li>
         </ul>
       </div>
-
     </div>
   </section>
 </template>
@@ -107,24 +103,35 @@ export default {
     let sectionIndex = 0
 
     function selector (index) {
+      const section = document.querySelector('.carousel__slider')
+
       if (index === 'first') {
         sliderState.first = true
         sliderState.second = false
         sliderState.third = false
         document.querySelector('.carousel__slider').style.transform = 'translate(' + (0) * -33.33 + '%)'
         sectionIndex = 0
+
+        section.classList.add('fade')
+        setTimeout(() => { section.classList.remove('fade') }, 300)
       } else if (index === 'second') {
         sliderState.first = false
         sliderState.second = true
         sliderState.third = false
         document.querySelector('.carousel__slider').style.transform = 'translate(' + (1) * -33.33 + '%)'
         sectionIndex = 1
+
+        section.classList.add('fade')
+        setTimeout(() => { section.classList.remove('fade') }, 300)
       } else if (index === 'third') {
         sliderState.first = false
         sliderState.second = false
         sliderState.third = true
         document.querySelector('.carousel__slider').style.transform = 'translate(' + (2) * -33.33 + '%)'
         sectionIndex = 2
+
+        section.classList.add('fade')
+        setTimeout(() => { section.classList.remove('fade') }, 300)
       }
     }
 
@@ -166,6 +173,10 @@ export default {
 </script>
 
 <style lang="scss">
+.fade {
+  filter: brightness(0.1);
+}
+
 .slider-container {
   width: 100%;
   margin:20px auto;
@@ -191,6 +202,7 @@ export default {
         display: flex;
         gap: 30px;
         color: $color-white;
+        transition: opacity 0.4s ease-in-out;
 
         img {
           position: absolute;
