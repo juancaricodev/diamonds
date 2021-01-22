@@ -18,7 +18,7 @@
         :key="card.title"
       >
         <img
-          src="../assets/img/shutterstock_1530727334.jpg"
+          :src="card.image"
           alt="product image"
           class="collection__cards-item-img"
         />
@@ -38,7 +38,7 @@
         :key="card.title"
       >
         <img
-          src="../assets/img/shutterstock_1530727334.jpg"
+          :src="card.image"
           alt="product image"
           class="collection__cards-item-img"
         />
@@ -74,47 +74,47 @@ export default {
       {
         title: 'Diamond 1',
         description: 'The shining diamonds of the bracelet sprinkle the space.',
-        image: '../assets/img/shutterstock_1530727334.jpg'
+        image: 'https://res.cloudinary.com/dncmrxklt/image/upload/v1611317451/shutterstock_1530727334_h3nmsg.jpg'
       },
       {
         title: 'Diamond 2',
         description: 'The intrinsic beauty lies in these sleek and clean earings where polished diamonds embrace the wearer and mark the shape of the face.',
-        image: '../assets/img/shutterstock_1530727334.jpg'
+        image: 'https://res.cloudinary.com/dncmrxklt/image/upload/v1611317451/shutterstock_1530727334_h3nmsg.jpg'
       },
       {
         title: 'Diamond 3',
         description: 'The sparkles of the diamonds on this powerful ring symbolize the strength of beauty.',
-        image: '../assets/img/shutterstock_1530727334.jpg'
+        image: 'https://res.cloudinary.com/dncmrxklt/image/upload/v1611317451/shutterstock_1530727334_h3nmsg.jpg'
       },
       {
         title: 'Diamond 4',
         description: 'The shining diamonds of the bracelet sprinkle the space.',
-        image: '../assets/img/shutterstock_1530727334.jpg'
+        image: 'https://res.cloudinary.com/dncmrxklt/image/upload/v1611317451/shutterstock_1530727334_h3nmsg.jpg'
       },
       {
         title: 'Diamond 5',
         description: 'The intrinsic beauty lies in these sleek and clean earings where polished diamonds embrace the wearer and mark the shape of the face.',
-        image: '../assets/img/shutterstock_1530727334.jpg'
+        image: 'https://res.cloudinary.com/dncmrxklt/image/upload/v1611317451/shutterstock_1530727334_h3nmsg.jpg'
       },
       {
         title: 'Diamond 6',
         description: 'The sparkles of the diamonds on this powerful ring symbolize the strength of beauty.',
-        image: '../assets/img/shutterstock_1530727334.jpg'
+        image: 'https://res.cloudinary.com/dncmrxklt/image/upload/v1611317451/shutterstock_1530727334_h3nmsg.jpg'
       },
       {
         title: 'Diamond 7',
         description: 'The shining diamonds of the bracelet sprinkle the space.',
-        image: '../assets/img/shutterstock_1530727334.jpg'
+        image: 'https://res.cloudinary.com/dncmrxklt/image/upload/v1611317451/shutterstock_1530727334_h3nmsg.jpg'
       },
       {
         title: 'Diamond 8',
         description: 'The intrinsic beauty lies in these sleek and clean earings where polished diamonds embrace the wearer and mark the shape of the face.',
-        image: '../assets/img/shutterstock_1530727334.jpg'
+        image: 'https://res.cloudinary.com/dncmrxklt/image/upload/v1611317451/shutterstock_1530727334_h3nmsg.jpg'
       },
       {
         title: 'Diamond 9',
         description: 'The sparkles of the diamonds on this powerful ring symbolize the strength of beauty.',
-        image: '../assets/img/shutterstock_1530727334.jpg'
+        image: 'https://res.cloudinary.com/dncmrxklt/image/upload/v1611317451/shutterstock_1530727334_h3nmsg.jpg'
       }
     ])
 
