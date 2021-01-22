@@ -1,11 +1,15 @@
-# Diamonds
-Website Diamonds developed with Vue.js among other technologies.
+# Diamond
+Website **Diamond** developed with Vue.js among other technologies. This site was developed with the 3th version of Vue.js and mainly using the Composition API.
 
 ## Stack
-* Vue.js
+* Vue.js 3
 * HTML5
 * SCSS (SASS)
 * JS
+
+
+## Demo
+Watch the production demo [here](https://diamond-juancaricodev.netlify.app/)!
 
 ## Project setup
 ```
@@ -30,5 +34,11 @@ yarn lint
 ## Preview
 ![image](./src/assets/img/home.jpg)
 
-<!-- ### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/). -->
+
+## License
+Distributed under the GPLv3 License. See `LICENSE` for more information.
+
+## Contact
+Juan Camilo Rico Orjuela: [@juancaricodev](https://twitter.com/your_username) - juancaricodev@gmail.com
+
+Repo Link: [https://github.com/juancaricodev/diamonds](https://github.com/juancaricodev/repo_name)
