@@ -11,41 +11,120 @@
       </p>
     </div>
 
-      <div class="collection__cards">
-      <div class="collection__cards-item">
-        <img src="../assets/img/shutterstock_1530727334.jpg" alt="product image" class="collection__cards-item-img">
+    <div class="collection__cards" v-if="cardsOpen">
+      <div
+        class="collection__cards-item"
+        v-for="card in cards"
+        :key="card.title"
+      >
+        <img
+          src="../assets/img/shutterstock_1530727334.jpg"
+          alt="product image"
+          class="collection__cards-item-img"
+        />
         <div class="collection__cards-item-content">
-          <h3>Diamond <sub>I</sub></h3>
+          <h3>{{ card.title }}</h3>
           <span></span>
-          <p>The shining diamonds of the bracelet sprinkle the space.</p>
-        </div>
-        <img src="../assets/svg/diamond-gold.svg" alt="diamond icon" class="collection__cards-item-diamond">
-      </div>
-
-      <div class="collection__cards-item">
-        <img src="../assets/img/shutterstock_1530727334.jpg" alt="product image" class="collection__cards-item-img">
-        <div class="collection__cards-item-content">
-          <h3>Diamond <sub>2</sub></h3>
-          <span></span>
-          <p>The intrinsic beauty lies in these sleek and clean earings where polished diamonds embrace the wearer and mark the shape of the face.</p>
-        </div>
-        <img src="../assets/svg/diamond-gold.svg" alt="diamond icon" class="collection__cards-item-diamond">
-      </div>
-
-      <div class="collection__cards-item">
-        <img src="../assets/img/shutterstock_1530727334.jpg" alt="product image" class="collection__cards-item-img">
-        <div class="collection__cards-item-content">
-          <h3>Diamond <sub>3</sub></h3>
-          <span></span>
-          <p>The sparkles of the diamonds on this powerful ring symbolize the strength of beauty.</p>
+          <p>{{ card.description }}</p>
         </div>
         <img src="../assets/svg/diamond-gold.svg" alt="diamond icon" class="collection__cards-item-diamond">
       </div>
     </div>
 
-    <button class="collection__button">View All</button>
+    <div class="collection__cards" v-if="!cardsOpen">
+      <div
+        class="collection__cards-item"
+        v-for="card in cards.slice(0, 3)"
+        :key="card.title"
+      >
+        <img
+          src="../assets/img/shutterstock_1530727334.jpg"
+          alt="product image"
+          class="collection__cards-item-img"
+        />
+        <div class="collection__cards-item-content">
+          <h3>{{ card.title }}</h3>
+          <span></span>
+          <p>{{ card.description }}</p>
+        </div>
+        <img src="../assets/svg/diamond-gold.svg" alt="diamond icon" class="collection__cards-item-diamond">
+      </div>
+    </div>
+
+    <button class="collection__button" @click="cardsOpen = !cardsOpen">{{ buttonLabel }}</button>
   </section>
 </template>
+
+<script>
+import { computed, reactive, ref, toRefs } from 'vue'
+export default {
+  setup () {
+    const collectionState = reactive({
+      cardsOpen: false,
+
+      buttonLabel: computed(() => {
+        if (collectionState.cardsOpen === true) {
+          return 'View less'
+        }
+        return 'View all'
+      })
+    })
+
+    const cards = ref([
+      {
+        title: 'Diamond 1',
+        description: 'The shining diamonds of the bracelet sprinkle the space.',
+        image: '../assets/img/shutterstock_1530727334.jpg'
+      },
+      {
+        title: 'Diamond 2',
+        description: 'The intrinsic beauty lies in these sleek and clean earings where polished diamonds embrace the wearer and mark the shape of the face.',
+        image: '../assets/img/shutterstock_1530727334.jpg'
+      },
+      {
+        title: 'Diamond 3',
+        description: 'The sparkles of the diamonds on this powerful ring symbolize the strength of beauty.',
+        image: '../assets/img/shutterstock_1530727334.jpg'
+      },
+      {
+        title: 'Diamond 4',
+        description: 'The shining diamonds of the bracelet sprinkle the space.',
+        image: '../assets/img/shutterstock_1530727334.jpg'
+      },
+      {
+        title: 'Diamond 5',
+        description: 'The intrinsic beauty lies in these sleek and clean earings where polished diamonds embrace the wearer and mark the shape of the face.',
+        image: '../assets/img/shutterstock_1530727334.jpg'
+      },
+      {
+        title: 'Diamond 6',
+        description: 'The sparkles of the diamonds on this powerful ring symbolize the strength of beauty.',
+        image: '../assets/img/shutterstock_1530727334.jpg'
+      },
+      {
+        title: 'Diamond 7',
+        description: 'The shining diamonds of the bracelet sprinkle the space.',
+        image: '../assets/img/shutterstock_1530727334.jpg'
+      },
+      {
+        title: 'Diamond 8',
+        description: 'The intrinsic beauty lies in these sleek and clean earings where polished diamonds embrace the wearer and mark the shape of the face.',
+        image: '../assets/img/shutterstock_1530727334.jpg'
+      },
+      {
+        title: 'Diamond 9',
+        description: 'The sparkles of the diamonds on this powerful ring symbolize the strength of beauty.',
+        image: '../assets/img/shutterstock_1530727334.jpg'
+      }
+    ])
+
+    return {
+      ...toRefs(collectionState),
+      cards
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 .collection {
@@ -106,6 +185,7 @@
     margin: 80px 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
     gap: 15px;
 
@@ -115,8 +195,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 100px 20px 50px;
-      width: 30%;
-      /* max-width: 380px; */
+      width: 28%;
       height: 500px;
       text-align: center;
       border-radius: 2px;
