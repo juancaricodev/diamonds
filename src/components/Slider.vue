@@ -1,25 +1,44 @@
 <template>
-  <section class="slider">
-    <img class="slider__img" src="../assets/img/jewelry-carousel.jpg" alt="slider image">
-    <!-- <img class="slider__img" src="../assets/img/jewelry-carousel2.png" alt="slider image">
-    <img class="slider__img" src="../assets/img/jewelry-carousel.jpg" alt="slider image"> -->
+  <section class="slider-container">
 
-    <div class="slider-position">
-      <div class="slider__text">
-        <h2 class="slider__text-title">Diamonds</h2>
+    <div class="carousel">
 
-        <div class="slider__text-hl"></div>
+      <div class="carousel__slider">
 
-        <p class="slider__text-content">
-          Diamonds are the brightest stars and only the sky is the limit when it comes to achieving our jewels.
-        </p>
+        <section>
+          <h2>Diamonds 1</h2>
+          <div class="hl-divider"></div>
+          <p class="slider__text-content">
+            Diamonds are the brightest stars and only the sky is the limit when it comes to achieving our jewels.
+          </p>
+        </section>
+
+        <section>
+          <h2>Diamonds 2</h2>
+          <!-- <div class="slider__text-hl"></div>
+          <p class="slider__text-content">
+            Diamonds are the brightest stars and only the sky is the limit when it comes to achieving our jewels.
+          </p> -->
+        </section>
+
+        <section>
+          <h2>Diamonds 3</h2>
+          <!-- <div class="slider__text-hl"></div>
+          <p class="slider__text-content">
+            Diamonds are the brightest stars and only the sky is the limit when it comes to achieving our jewels.
+          </p> -->
+        </section>
+
       </div>
+
+      <div class="carousel__controls">
+        <button class="carousel__controls--right"><img src="../assets/svg/arrow.svg" alt="arrow right button"></button>
+        <button class="carousel__controls--left"><img src="../assets/svg/arrow.svg" alt="arrow left button"></button>
+      </div>
+
     </div>
 
-    <button class="slider__btn slider__btn--right"><img src="../assets/svg/arrow.svg" alt="arrow right button"></button>
-    <button class="slider__btn slider__btn--left"><img src="../assets/svg/arrow.svg" alt="arrow left button"></button>
-
-    <div class="slider__selector">
+    <!-- <div class="slider__selector">
       <div class="slider__selector-group">
         <img
           src="../assets/svg/diamond.svg"
@@ -58,7 +77,7 @@
           :style="{ 'diamond-active': third === true }"
         />
       </div>
-    </div>
+    </div> -->
   </section>
 </template>
 
@@ -80,87 +99,90 @@ export default {
 </script>
 
 <style lang="scss">
-.slider {
-  display: grid;
-  grid-template-columns: 10% auto 10%;
-  grid-template-rows: 1fr;
+.slider-container {
+  width: 100%;
+  margin:20px auto;
 
-  /* Background Image */
+  /* Background Image
   &__img {
     position: relative;
     grid-column: 1 / span 3;
     width: 100%;
     filter: brightness(0.3);
-  }
+  } */
 
-  &-position {
-    grid-column: 2;
-    grid-row: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  /* Carousel */
+  .carousel {
+    /* border: 2px solid #416be4; */
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    /* border-radius: 5px; */
+    background: #000;
+    /* box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.1); */
 
-  /* Text */
-  &__text {
-    position: absolute;
-    top: 35%;
-    grid-column: 2;
-    grid-row: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 360px;
-    gap: 30px;
-    color: $color-white;
-    opacity: 0.9;
+    &__slider {
+      display: flex;
+      height: 100%;
+      width: 300%;
 
-    &-title {
-      font-family: $didot;
-      text-transform: uppercase;
-      font-size: $section-title;
-      font-weight: 500;
-      letter-spacing: 2px;
+      section {
+        flex-basis: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        gap: 30px;
+        color: $color-white;
+
+        h2 {
+          font-family: $didot;
+          text-transform: uppercase;
+          font-size: $section-title;
+          font-weight: 500;
+          letter-spacing: 2px;
+        }
+
+        .hl-divider {
+          width: 250px;
+          border-bottom: solid $color-white 1px;
+        }
+
+        p {
+          width: 340px;
+          font-family: $poppins;
+          font-size: $section-content;
+          font-weight: 300;
+          letter-spacing: 2px;
+          text-align: center;
+        }
+      }
     }
 
-    &-hl {
-      width: 250px;
-      border-bottom: solid $color-white 1px;
-    }
+    &__controls {
+      /* Button */
+      button {
+        position: absolute;
+        top: 45%;
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
 
-    &-content {
-      font-family: $poppins;
-      font-size: $section-content;
-      font-weight: 300;
-      letter-spacing: 2px;
-      text-align: center;
-    }
-  }
+        img {
+          width: 27px;
+          transition: 0.3s;
 
-  /* Button */
-  &__btn {
-    position: absolute;
-    top: 45%;
-    background: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
+          &:hover { width: 29px; }
+        }
+      }
 
-    img {
-      width: 27px;
-    }
+      &--right { right: 10%; }
 
-    &--right {
-      right: 10%;
-      grid-column: 3;
-      grid-row: 1;
-    }
-
-    &--left {
-      left: 10%;
-      grid-column: 1;
-      grid-row: 1;
-      transform: scaleX(-1);
+      &--left {
+        left: 10%;
+        transform: scaleX(-1);
+      }
     }
   }
 
@@ -180,8 +202,7 @@ export default {
       gap: 30px;
 
       img {
-        width: 16px;
-        cursor: pointer;
+        visibility: hidden;
       }
     }
   }
