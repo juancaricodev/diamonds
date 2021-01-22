@@ -5,29 +5,32 @@
 
       <div class="carousel__slider">
 
-        <section>
+        <div class="carousel__slider-section">
+          <img src="../assets/img/jewelry-carousel.jpg" alt="slider image">
           <h2>Diamonds 1</h2>
           <div class="hl-divider"></div>
           <p class="slider__text-content">
             Diamonds are the brightest stars and only the sky is the limit when it comes to achieving our jewels.
           </p>
-        </section>
+        </div>
 
-        <section>
+        <div class="carousel__slider-section">
+          <img src="../assets/img/jewelry-carousel2.png" alt="slider image">
           <h2>Diamonds 2</h2>
-          <!-- <div class="slider__text-hl"></div>
+          <div class="hl-divider"></div>
           <p class="slider__text-content">
             Diamonds are the brightest stars and only the sky is the limit when it comes to achieving our jewels.
-          </p> -->
-        </section>
+          </p>
+        </div>
 
-        <section>
+        <div class="carousel__slider-section">
+          <img src="../assets/img/jewelry-carousel.jpg" alt="slider image">
           <h2>Diamonds 3</h2>
-          <!-- <div class="slider__text-hl"></div>
+          <div class="hl-divider"></div>
           <p class="slider__text-content">
             Diamonds are the brightest stars and only the sky is the limit when it comes to achieving our jewels.
-          </p> -->
-        </section>
+          </p>
+        </div>
 
       </div>
 
@@ -135,10 +138,11 @@ export default {
   .carousel {
     /* border: 2px solid #416be4; */
     position: relative;
-    height: 400px;
+    height: 600px;
     overflow: hidden;
     /* border-radius: 5px; */
-    background: #000;
+    /* background: #000;
+    opacity: 1; */
     /* box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.1); */
 
     &__slider {
@@ -147,7 +151,8 @@ export default {
       width: 300%;
       transition: all 0.7s;
 
-      section {
+      &-section {
+        width: 100vw;
         flex-basis: 100%;
         flex-direction: column;
         justify-content: center;
@@ -155,6 +160,16 @@ export default {
         display: flex;
         gap: 30px;
         color: $color-white;
+        /* background-image: url(../assets/img/jewelry-carousel.jpg);
+        filter: brightness(0.3); */
+
+        img {
+          position: absolute;
+          width: 100vw;
+          height: 100%;
+          z-index: -1;
+          filter: brightness(0.25);
+        }
 
         h2 {
           font-family: $didot;
@@ -185,6 +200,8 @@ export default {
       button {
         position: absolute;
         top: 45%;
+        /* top: 50%;
+        transform: translateY(-50%); */
         background: transparent;
         border: none;
         outline: none;
