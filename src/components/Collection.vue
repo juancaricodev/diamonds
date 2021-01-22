@@ -58,6 +58,36 @@ export default {
         title: 'Diamond 3',
         description: 'The sparkles of the diamonds on this powerful ring symbolize the strength of beauty.',
         image: '../assets/img/shutterstock_1530727334.jpg'
+      },
+      {
+        title: 'Diamond 4',
+        description: 'The shining diamonds of the bracelet sprinkle the space.',
+        image: '../assets/img/shutterstock_1530727334.jpg'
+      },
+      {
+        title: 'Diamond 5',
+        description: 'The intrinsic beauty lies in these sleek and clean earings where polished diamonds embrace the wearer and mark the shape of the face.',
+        image: '../assets/img/shutterstock_1530727334.jpg'
+      },
+      {
+        title: 'Diamond 6',
+        description: 'The sparkles of the diamonds on this powerful ring symbolize the strength of beauty.',
+        image: '../assets/img/shutterstock_1530727334.jpg'
+      },
+      {
+        title: 'Diamond 7',
+        description: 'The shining diamonds of the bracelet sprinkle the space.',
+        image: '../assets/img/shutterstock_1530727334.jpg'
+      },
+      {
+        title: 'Diamond 8',
+        description: 'The intrinsic beauty lies in these sleek and clean earings where polished diamonds embrace the wearer and mark the shape of the face.',
+        image: '../assets/img/shutterstock_1530727334.jpg'
+      },
+      {
+        title: 'Diamond 9',
+        description: 'The sparkles of the diamonds on this powerful ring symbolize the strength of beauty.',
+        image: '../assets/img/shutterstock_1530727334.jpg'
       }
     ])
 
@@ -133,7 +163,8 @@ export default {
   &__cards {
     margin: 80px 0;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
     gap: 15px;
 
@@ -143,8 +174,7 @@ export default {
       justify-content: space-between;
       align-items: center;
       padding: 100px 20px 50px;
-      width: 30%;
-      /* max-width: 380px; */
+      width: 28%;
       height: 500px;
       text-align: center;
       border-radius: 2px;
