@@ -43,9 +43,33 @@
       </div>
     </div>
 
-    <button class="collection__button">View All</button>
+    <button class="collection__button" @click="viewAll">View All</button>
   </section>
 </template>
+
+<script>
+import { reactive, ref, toRefs } from 'vue'
+export default {
+  setup () {
+    const collectionState = reactive({
+      cardsOpen: false
+    })
+
+    const cards = ref([])
+
+    function viewAll () {
+      collectionState.cardsOpen = true
+      console.log(`button working: ${collectionState.cardsOpen}`)
+    }
+
+    return {
+      ...toRefs(collectionState),
+      cards,
+      viewAll
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 .collection {
