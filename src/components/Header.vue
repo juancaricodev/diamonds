@@ -7,7 +7,7 @@
 
     <nav class="header__navbar">
       <div :class="{ active: homeActive === true }">
-        <a @click="scrollUpBtn, setActive('homeActive')">
+        <a @click="scrollOption('.header'), setActive('homeActive')">
           <p>HOME</p>
         </a>
         <img
@@ -62,6 +62,7 @@ export default {
       aboutActive: false,
       jewelsActive: false,
       contactActive: false,
+
       pageScrolled: false
     })
 
@@ -75,27 +76,35 @@ export default {
     }
 
     function setActive (option) {
-      Object.keys(navbarState).map((key, index) => {
-        navbarState[key] = false
-      })
-
       if (option === 'homeActive') {
         navbarState.homeActive = true
+        navbarState.aboutActive = false
+        navbarState.jewelsActive = false
+        navbarState.contactActive = false
       } else if (option === 'aboutActive') {
+        navbarState.homeActive = false
         navbarState.aboutActive = true
+        navbarState.jewelsActive = false
+        navbarState.contactActive = false
       } else if (option === 'jewelsActive') {
+        navbarState.homeActive = false
+        navbarState.aboutActive = false
         navbarState.jewelsActive = true
+        navbarState.contactActive = false
       } else if (option === 'contactActive') {
+        navbarState.homeActive = false
+        navbarState.aboutActive = false
+        navbarState.jewelsActive = false
         navbarState.contactActive = true
       }
     }
 
     function scrollUpBtn () {
-      const rootElement = document.documentElement
-      rootElement.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      })
+      // const rootElement = document.documentElement
+      // rootElement.scrollTo({
+      //   top: 0,
+      //   behavior: 'smooth'
+      // })
     }
 
     function scrollOption (selector) {
